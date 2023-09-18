@@ -20,3 +20,11 @@ function ajout_CSS_script() {
 
 }
 add_action( 'wp_enqueue_scripts', 'ajout_CSS_script' );
+
+// Menus
+
+register_nav_menus( array(
+    'main' => 'Menu principal',
+    'footer' => 'Bas de page',
+    )
+);
