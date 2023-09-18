@@ -7,3 +7,65 @@ Description: Mon premier thème !
 Requires at least: WordPress 5.0
 Version: 1.0
 */
+
+/* Header */
+
+.site__header__menu {list-style: none;}
+
+.site__header__menu li {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'SpaceMono' monospace;
+    font-weight: 400;
+}
+
+/* Footer */
+
+.site__footer {border-top: 1px solid black;}
+
+.site__footer ul {list-style: none;}
+
+.menu-footer-container ul {display: flex;
+justify-content:space-around;}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Space Mono' monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Space Mono' monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Italic.woff2') format('woff2');
+    font-display: swap;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Space Mono' monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
+    font-display: swap;
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Light.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins' sans-serif;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Medium.woff2') format('woff2');
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+}
