@@ -8,6 +8,63 @@ Requires at least: WordPress 5.0
 Version: 1.0
 */
 
+/* Style des balises */
+
+/* Desktop */
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 96px;
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 66px;
+}
+
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.description-photo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+}
+
+/* Mobile */
+
+.h1-mobile {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 27.59px;
+}
+
+.h2-mobile {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 46px;
+}
+
+
+
 /* Header */
 
 .site__header__menu {list-style: none;}
@@ -15,7 +72,7 @@ Version: 1.0
 .site__header__menu li {
     display: flex;
     justify-content: space-around;
-    font-family: 'SpaceMono' monospace;
+    font-family: 'Space Mono', monospace;
     font-weight: 400;
 }
 
@@ -23,7 +80,13 @@ Version: 1.0
 
 .site__footer {border-top: 1px solid black;}
 
-.site__footer ul {list-style: none;}
+.site__footer ul {
+    list-style: none;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 24px;
+}
 
 .menu-footer-container ul {display: flex;
 justify-content:space-around;}
@@ -31,41 +94,36 @@ justify-content:space-around;}
 /* Fonts */
 
 @font-face {
-    font-family: 'Space Mono' monospace;
+    font-family: 'Space Mono', monospace;
     src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Regular.woff2') format('woff2');
-    font-display: swap;
     font-style: normal;
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Space Mono' monospace;
+    font-family: 'Space Mono', monospace;
     src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Italic.woff2') format('woff2');
-    font-display: swap;
     font-style: italic;
     font-weight: 400;
 }
 
 @font-face {
-    font-family: 'Space Mono' monospace;
+    font-family: 'Space Mono', monospace;
     src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
-    font-display: swap;
     font-style: italic;
     font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
     src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Light.woff2') format('woff2');
-    font-display: swap;
     font-style: normal;
     font-weight: 300;
 }
 
 @font-face {
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
     src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Medium.woff2') format('woff2');
-    font-display: swap;
     font-style: normal;
     font-weight: 500;
 }
