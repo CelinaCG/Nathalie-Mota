@@ -5,6 +5,6 @@
         <li><a href="#">Vie privée</a></li> -->
         <li><p>Tous droits réservés</p></li>
     </ul>
-    
+    <?php get_template_part('template-parts/modale', '');?>
 </footer>
 <?php wp_footer(); ?>
