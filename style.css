@@ -132,10 +132,34 @@ justify-content:space-around;}
 
 /* Modale de contact */
 
+.header-img {width: 660px;}
+
 .rubrique {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 12px;
+}
+
+.wpcf7.js{
+    display: flex;
+    justify-content: center;
+}
+
+.border-input {
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.input-message {
+    border-radius: 8px;
+    height: 210px;
+}
+
+.bt-envoyer {
+    display: flex;
+    justify-content: center;
 }
 
 /* Arrière-plan */
@@ -158,7 +182,7 @@ justify-content:space-around;}
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 0px;
     border: 1px solid #888;
     /* width: 80%; Could be more or less, depending on screen size */
     width: 597px;
