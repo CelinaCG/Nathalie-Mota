@@ -1,0 +1,263 @@
+/*
+Theme Name: Motaphoto
+Theme URI: https://motaphoto.com
+Author: Céline CHEUNG
+Author URI: https://motaphoto.com
+Description: Mon premier thème !
+Requires at least: WordPress 5.0
+Version: 1.0
+*/
+
+/* Style des balises */
+
+/* Desktop */
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 96px;
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 66px;
+}
+
+h3 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.description-photo {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+/* p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+} */
+
+/* Mobile */
+
+.h1-mobile {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 27.59px;
+}
+
+.h2-mobile {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 46px;
+}
+
+
+
+/* Header */
+
+.site__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 80px;
+    /* margin-right: 50px; */
+    height: 80px;
+    width: 1440px;
+}
+
+.site__header__menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-right: 25px;
+}
+
+.menu-item {
+    margin-left: 20px;
+}
+
+#nav-items {
+    display: flex;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.rubrique-menu {
+    color: #000000;
+    text-decoration:none;
+}
+
+
+/* Footer */
+
+.site__footer {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    width: 1440px;
+    height: 40px;
+}
+
+.site__footer ul {
+    list-style: none;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.droits-reserves {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-footer-container ul {
+    display: flex;
+    justify-content:space-around;
+}
+
+.menu-footer-container {margin-right: 20px;}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Space Mono', monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Space Mono', monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-Italic.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Space Mono', monospace;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Light.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('/app/public/wp-content/themes/motaphoto/assets/fonts/Poppins-Medium.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Modale de contact */
+
+.header-img {
+    width: 660px;
+    position:relative;
+    z-index: 0;
+}
+
+.rubrique {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.wpcf7.js{
+    display: flex;
+    justify-content: center;
+}
+
+.border-input {
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border:#000000 solid 1px;
+}
+
+.input-message {
+    border-radius: 8px;
+    height: 210px;
+    border:#000000 solid 1px;
+}
+
+.btn-envoyer {
+    display: flex;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    background-color: #D8D8D8;
+}
+
+.wpcf7-spinner {display:none;}
+
+/* Arrière-plan */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(52, 51, 51); /* Black w/ opacity */
+}
+
+/* Contenu modale */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 0px;
+    border: 1px solid #888;
+    /* width: 80%; Could be more or less, depending on screen size */
+    width: 597px;
+    height: 770px;
+}
+
+/* Bouton de fermeture */
+
+/* .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+} */
+
+/* .close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} */
+
