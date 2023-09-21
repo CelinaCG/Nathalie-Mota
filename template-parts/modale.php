@@ -1,6 +1,3 @@
-<!-- Ouverture modale
-<button id="myBtn">Open Modal</button> -->
-
 <!-- Modale -->
 <div id="myModal" class="modal">
     
