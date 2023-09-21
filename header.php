@@ -11,7 +11,7 @@
 
     <header class="site__header">
         <a href="<?php echo home_url('/'); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt='Logo'>
+            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt='Logo'>
         </a>
         <nav id="nav-items" role="navigation" aria-label="<?php _e('Menu principal', 'text-domain'); ?>">
             <?php wp_nav_menu( array(
