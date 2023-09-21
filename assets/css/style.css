@@ -100,7 +100,7 @@ h3 {
     text-transform: uppercase;
 }
 
-.rubrique-menu {
+.rubrique-menu a {
     color: #000000;
     text-decoration:none;
 }
