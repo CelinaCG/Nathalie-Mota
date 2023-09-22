@@ -10,9 +10,10 @@
 <body <?php body_class('site'); ?>>
 
     <header class="site__header">
-        <a href="<?php echo home_url('/'); ?>">
-            <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt='Logo'>
-        </a>
+        <div class="logo" id="logo">
+        <a href="<?php echo home_url('/'); ?>" rel="home"><img src="<?php echo get_theme_mod('montheme_logo'); ?>" alt="logo"></a>
+        </div>
+       
         <nav id="nav-items" role="navigation" aria-label="<?php _e('Menu principal', 'text-domain'); ?>">
             <?php wp_nav_menu( array(
                 'theme_location' => 'main',
