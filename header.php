@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class('site'); ?>>
-
+<div class="container">
     <header class="site__header">
         <div class="logo" id="logo">
         <a href="<?php echo home_url('/'); ?>" rel="home"><img src="<?php echo get_theme_mod('montheme_logo'); ?>" alt="logo"></a>
@@ -25,3 +25,4 @@
     </header>
     
     <?php wp_body_open(); ?>
+    <main>
