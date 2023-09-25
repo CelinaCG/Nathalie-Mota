@@ -1,3 +1,5 @@
+<!-- Fermeture du container -->
+</main>
 <footer class="site__footer">
     <?php wp_nav_menu( array('theme_location' => 'footer')); ?>
     
@@ -6,6 +8,5 @@
     <?php get_template_part('template-parts/modale', '');?>
 </footer>
 <?php wp_footer(); ?>
-<!-- Fermeture du container -->
-</main>
+
 </div>
