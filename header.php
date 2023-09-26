@@ -21,6 +21,11 @@
                 'menu_class' => 'site__header__menu', // Classe CSS
             )); ?>
             <p class="contact">Contact</p>
+            <div class="burger">
+                <img class="menu_burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/burger.png' ?>">
+                <img class="croix_burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/cross.png' ?>">
+            </div>
+
         </nav>
     </header>
     
