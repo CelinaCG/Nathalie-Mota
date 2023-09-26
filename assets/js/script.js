@@ -15,3 +15,23 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// Menu burger
+
+var sidenav = document.querySelector('#side-nav');
+var openburger = document.querySelector('.menu_burger');
+var closeburger = document.querySelector('.croix_burger');
+
+openburger.addEventListener('click', function(){
+    document.querySelector('.m-burger').style.display="block";
+    // Disparition du menu burger
+    document.querySelector('.menu_burger').style.display="none";
+    // Apparition de la croix
+    document.querySelector('.croix_burger').style.display="block";
+});
+
+closeburger.addEventListener('click', function(){
+    document.querySelector('.m-burger').style.display="none";
+    document.querySelector('.croix_burger').style.display="none";
+    document.querySelector('.menu_burger').display="block";
+});
