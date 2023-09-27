@@ -129,6 +129,28 @@ h3 {
     text-transform: uppercase;
 }
 
+/* Page détail photo */
+
+.detail-photo {
+    display: flex;
+    justify-content: space-around;
+    border-top: 20px solid;
+    border-image: linear-gradient(to bottom, #000000 0%, #FFFFFF 100%);
+}
+
+.photo {
+    object-fit: contain;
+    width: 50vh;
+    height: auto;
+}
+
+.bordure-description {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    border-bottom: #000000 solid 1px;
+}
+
 /* Footer */
 
 .site__footer {
