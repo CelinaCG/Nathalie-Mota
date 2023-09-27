@@ -13,7 +13,7 @@
 
 	<section>
 		<!-- Affichage de la photo -->
-		<img class="photo" src="<?php echo get_the_post_thumbnail (); ?>
+		<img class="photo" src="<?php echo get_the_post_thumbnail (); ?>">
 	</section>
 </div>	
 	
