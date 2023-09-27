@@ -35,3 +35,12 @@ closeburger.addEventListener('click', function(){
     document.querySelector('.croix_burger').style.display="none";
     document.querySelector('.menu_burger').display="block";
 });
+
+// Images
+
+// récupération de l'id l'article photo -->
+$thumbnail_id = get_post_thumbnail_id();
+// récupération de l'url de la photo -->
+$thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'custom-size');
+// Récupération de l'attribut ALT de l'image mise en avant pour une meilleure accessibilité
+$thumbnail_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
