@@ -42,12 +42,12 @@ h3 {
     text-transform: uppercase;
 }
 
-/* p {
+.poppins {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 14px;
-} */
+}
 
 /* Mobile */
 
@@ -131,6 +131,14 @@ h3 {
 
 /* Page détail photo */
 
+.contact-carrousel {
+    height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
 .detail-photo {
     display: flex;
     justify-content: space-around;
@@ -149,6 +157,29 @@ h3 {
     align-self: flex-end;
     flex-direction: column;
     border-bottom: #000000 solid 1px;
+}
+
+.contact-photo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .contact-photo p {display: contents;} */
+
+
+
+.btn-contact {
+    padding: 8px 15px 8px 15px;
+    background-color: #D8D8D8;
+    width: 272px;
+    height: 50px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer */
