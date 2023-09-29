@@ -13,7 +13,7 @@
 
 		<section>
 			<!-- Affichage de la photo -->
-			<img class="photo" src="<?php echo get_the_post_thumbnail (); ?>">
+			<img class="photo" src="<?php echo get_the_post_thumbnail(); ?>">
 		</section>
 	</div>	
 
@@ -24,9 +24,39 @@
 		</section>
 		<section class="carrousel">
 			<div></div>
-			<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/arrow-left.png' ?>">
 			
-			<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/arrow-right.png' ?>">
+			
+			<!-- Slide -->
+			<div>
+			<?php 
+				$previous = get_previous_post();
+				$next = get_next_post();
+			?>
+
+			<?php if(get_previous_post()){?>
+				<a href="<?php echo get_the_permalink($previous) ?>">
+				<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">
+				
+					<div>
+						<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
+					</div>
+				</a>
+			<?php }?>
+			<?php if ( get_next_post() ) {?>
+				<a href="<?php echo get_the_permalink($next) ?>">
+					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">
+					
+					<div>
+						<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
+					</div>
+				</a>
+				<?php }?>
+			</div><!-- #slider-window -->
+
+		
+		
+		
+			
 		</section>
 	</div>
 	
