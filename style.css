@@ -32,6 +32,7 @@ h3 {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
+    text-transform: uppercase;
 }
 
 .description-photo {
