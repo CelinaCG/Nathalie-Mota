@@ -53,13 +53,33 @@
 				<?php }?>
 			</div><!-- #slider-window -->
 
-		
-		
-		
-			
 		</section>
 	</div>
+	<section>
+		<h3>Vous aimerez aussi</h3>
+
+		<!-- Boucle photos apparentées -->
+		<?php
+		// Appel tableau de la catégorie
+		$featured_image_query = new WP_Query(array(
+			'taxonomy' => 'category',
+			'posts_per_page' => 2
+		));
+		
+		if($featured_image_query->have_posts()):
+			// Si catégorie existe, afficher la photo
+			$thumbnail_id = get_post_thumbnail_id();
+			$image_src = wp_get_attachment_image_src( $thumbnail_id );
+			  
+					
+					
+					
+				
+		endif; ?>
 	
+
+
+	</section>
 
 </div>
 
