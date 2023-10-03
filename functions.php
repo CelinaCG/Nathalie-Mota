@@ -48,3 +48,28 @@ register_nav_menus( array(
     'footer' => 'Bas de page',
     )
 );
+
+// Ajax
+
+
+function cookinfamily_request_recettes() {
+	$args = array('post_type' => 'mariage', 'posts_per_page' => 2 );
+	$query = new WP_Query($args);
+	if($query->have_posts()) {
+	$response = $query;
+	} else {
+	$response = false;
+	}
+	
+	wp_send_json($response);
+	wp_die();
+}
+add_action('wp_ajax_request_mariage', 'featured_pictures_request_mariage');
+add_action('wp_ajax_nopriv_request_mariage', 'featured_pictures_request_mariage');
+
+function featured_pictures_scripts() {
+	wp_enqueue_script('featured-pictures', get_template_directory_uri() . '/assets/js/ajax.js', array('jquery'), '1.0.0', true);
+	wp_localize_script('featured-pictures', 'script', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+	
+add_action('wp_enqueue_scripts', 'featured_pictures_scripts');
