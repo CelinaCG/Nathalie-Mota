@@ -60,22 +60,19 @@
 
 		<!-- Boucle photos apparentées -->
 		<?php
-		// Appel tableau de la catégorie
-		$featured_image_query = new WP_Query(array(
-			'taxonomy' => 'category',
-			'posts_per_page' => 2
-		));
+	
+		// Create the variable for the large image src link
+		$medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 		
-		if($featured_image_query->have_posts()):
-			// Si catégorie existe, afficher la photo
-			$thumbnail_id = get_post_thumbnail_id();
-			$image_src = wp_get_attachment_image_src( $thumbnail_id );
-			  
-					
-					
-					
-				
-		endif; ?>
+		?>
+		
+	
+		<a href="<?php echo the_permalink(); $medium_image_url[0]; ?>" title="<?php the_title_attribute(); ?>">
+		
+		<?php the_post_thumbnail('medium'); ?></a>
+		
+		
+	
 	
 
 
