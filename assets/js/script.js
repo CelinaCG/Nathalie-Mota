@@ -33,8 +33,13 @@ openburger.addEventListener('click', function(){
 closeburger.addEventListener('click', function(){
     document.querySelector('.m-burger').style.display="none";
     document.querySelector('.croix_burger').style.display="none";
-    document.querySelector('.menu_burger').display="block";
+    document.querySelector('.menu_burger').style.display="block";
 });
+
+var btnContact = document.querySelector('.btn-contact');
+btnContact.onclick = function() {
+    modal.style.display = "block";
+}
 
 // Images
 
