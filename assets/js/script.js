@@ -81,3 +81,68 @@ flecheDroite.addEventListener("click", function() {
 	}
 	
 });
+
+// Carrousel
+
+const imageElement = document.querySelector(".image-slider");
+
+// Flèche gauche
+let flechegauche = document.querySelector(".flechegauche");
+// Ce gestionnaire ne sera exécuté qu'une fois
+// lorsque le curseur se déplace sur la liste
+flechegauche.addEventListener(
+    "mouseenter",
+    function (event) {
+        // on met l'accent sur la cible de mouseenter
+        // event.target.style.color = "purple";
+        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
+
+    },
+    false,
+);
+
+// Ce gestionnaire sera exécuté à chaque fois que le curseur
+// se déplacera sur un autre élément de la liste
+flechegauche.addEventListener(
+    "mouseover",
+    function (event) {
+        // on met l'accent sur la cible de mouseover
+        // event.target.style.color = "orange";
+        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
+
+    },
+    false,
+);
+
+// Flèche droite
+let flechedroite = document.querySelector(".flechedroite");
+flechedroite.addEventListener(
+    "mouseenter",
+    function (event) {
+        // on met l'accent sur la cible de mouseenter
+        // event.target.style.color = "purple";
+        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
+
+    },
+    false,
+);
+
+// Ce gestionnaire sera exécuté à chaque fois que le curseur
+// se déplacera sur un autre élément de la liste
+flechedroite.addEventListener(
+    "mouseover",
+    function (event) {
+        // on met l'accent sur la cible de mouseover
+        // event.target.style.color = "orange";
+        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
+
+    },
+    false,
+);
+
+
+// Ajout référence photo dans le formulaire
+
+$(document).ready(function(){
+    $(".wpcf7-text").val(get_the_ID('reference'));
+});
