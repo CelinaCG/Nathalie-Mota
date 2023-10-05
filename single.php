@@ -38,12 +38,6 @@
 				$next = get_next_post();
 			?>
 
-			<div>
-				<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
-			</div>
-			<div>
-				<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
-			</div>
 
 			<?php if(get_previous_post()){?>
 				<a href="<?php echo get_the_permalink($previous) ?>">
@@ -53,12 +47,19 @@
 			<?php }
 			elseif ( get_next_post() ) {?>
 				<a href="<?php echo get_the_permalink($next) ?>">
-					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">
-					
+					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
 					
 				</a>
 			<?php }?>
-			</div><!-- #slider-window -->
+
+			<div class="align-arrows">
+				<div>
+					<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
+				</div>
+				<div>
+					<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
+				</div>
+			</div>
 
 		</section>
 	</div>
