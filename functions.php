@@ -52,7 +52,7 @@ register_nav_menus( array(
 // Ajax
 
 
-function cookinfamily_request_recettes() {
+function featured_pictures_request_mariage() {
 	$args = array('post_type' => 'mariage', 'posts_per_page' => 2 );
 	$query = new WP_Query($args);
 	if($query->have_posts()) {
