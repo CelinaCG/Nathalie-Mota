@@ -9,15 +9,9 @@
 			<p class="description-photo">FORMAT : <?php echo get_the_terms(get_the_ID(),'format')[0]->name ?></p>
 			<p class="description-photo">TYPE : <?php echo get_field('type') ?></p>
 			<p class="description-photo">ANNÉE : <?php echo get_the_date('Y') ?></p>
-			<!-- <div class="bordure"></div>
-			<section class="contact-photo">
-			<p class="poppins">Cette photo vous intéresse ?</p>
-			<p class="contact btn-contact">Contact</p>
-			</section> -->
 		</section>
 
 		<section class="affichage-photo">
-			<!-- Affichage de la photo -->
 			<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 		</section>
 	</div>	
@@ -70,14 +64,20 @@
 		<?php
 	
 		// Create the variable for the large image src link
-		$medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+		// $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 		
-		?>
+		// ?>
 		
 	
-		<a href="<?php echo the_permalink(); $medium_image_url[0]; ?>" title="<?php the_title_attribute(); ?>">
+		<!-- // <a href="<?php 
+		// echo the_permalink(); $medium_image_url[0]; 
+		?>" title="<?php 
+		// the_title_attribute();
+		?>"> -->
 		
-		<?php the_post_thumbnail('medium'); ?></a>
+		<!-- // <?php 
+		// the_post_thumbnail('medium'); 
+		?></a> -->
 		
 		
 	
