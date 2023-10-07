@@ -263,7 +263,7 @@ header {
 .detail-photo .affichage-photo img {
     object-fit: fill;
     width: 100%;
-    height: 844px;
+    height: auto;
 }
 
 .section-single {
@@ -285,6 +285,8 @@ header {
 .affichage-photo {
     width: 50%;
     margin-left: 10px;
+    display: flex;
+    align-self: flex-end;
 }
 
 .contact-photo {
