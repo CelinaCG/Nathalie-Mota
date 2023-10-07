@@ -54,33 +54,33 @@ $thumbnail_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_al
 
 // Flèche gauche
 
-let flecheGauche = document.querySelector(".flechegauche");
-let clickFleche = 0;
-flecheGauche.addEventListener("click", function() {
-	// Décrémentation de la position de l'image/slide
-	clickFleche--;
-	// Condition if pour définir position de la slide après incrémentation
-	if (clickFleche < 0) {
+// let flecheGauche = document.querySelector(".flechegauche");
+// let clickFleche = 0;
+// flecheGauche.addEventListener("click", function() {
+// 	// Décrémentation de la position de l'image/slide
+// 	clickFleche--;
+// 	// Condition if pour définir position de la slide après incrémentation
+// 	if (clickFleche < 0) {
 	
-		clickFleche = slides.length -1;
-	}
+// 		clickFleche = slides.length -1;
+// 	}
 
 
-});
+// });
 	
 
 // Flèche droite
 
-let flecheDroite = document.querySelector(".flechedroite");
-flecheDroite.addEventListener("click", function() {
+// let flecheDroite = document.querySelector(".flechedroite");
+// flecheDroite.addEventListener("click", function() {
 
-	// Incrémentation de la position de l'image
-	clickFleche++;
-	if (clickFleche > slides.length -1) {
-		clickFleche = 0;
-	}
+// 	// Incrémentation de la position de l'image
+// 	clickFleche++;
+// 	if (clickFleche > slides.length -1) {
+// 		clickFleche = 0;
+// 	}
 	
-});
+// });
 
 // Carrousel
 
@@ -90,9 +90,7 @@ const imageElement = document.querySelector(".image-slider");
 let flechegauche = document.querySelector(".flechegauche");
 // Ce gestionnaire ne sera exécuté qu'une fois
 // lorsque le curseur se déplace sur la liste
-flechegauche.addEventListener(
-    "mouseenter",
-    function (event) {
+flechegauche.addEventListener("mouseenter", function (event){
         // on met l'accent sur la cible de mouseenter
         // event.target.style.color = "purple";
         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
@@ -103,9 +101,7 @@ flechegauche.addEventListener(
 
 // Ce gestionnaire sera exécuté à chaque fois que le curseur
 // se déplacera sur un autre élément de la liste
-flechegauche.addEventListener(
-    "mouseover",
-    function (event) {
+flechegauche.addEventListener("mouseover", function (event){
         // on met l'accent sur la cible de mouseover
         // event.target.style.color = "orange";
         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
@@ -116,9 +112,7 @@ flechegauche.addEventListener(
 
 // Flèche droite
 let flechedroite = document.querySelector(".flechedroite");
-flechedroite.addEventListener(
-    "mouseenter",
-    function (event) {
+flechedroite.addEventListener("mouseenter", function (event){
         // on met l'accent sur la cible de mouseenter
         // event.target.style.color = "purple";
         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
@@ -127,11 +121,7 @@ flechedroite.addEventListener(
     false,
 );
 
-// Ce gestionnaire sera exécuté à chaque fois que le curseur
-// se déplacera sur un autre élément de la liste
-flechedroite.addEventListener(
-    "mouseover",
-    function (event) {
+flechedroite.addEventListener("mouseover", function (event){
         // on met l'accent sur la cible de mouseover
         // event.target.style.color = "orange";
         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
@@ -143,6 +133,9 @@ flechedroite.addEventListener(
 
 // Ajout référence photo dans le formulaire
 
-$(document).ready(function(){
-    $(".wpcf7-text").val(get_the_ID('reference'));
-});
+// $(document).ready(function(){
+//     $(".wpcf7-text").val(get_the_ID('reference'));
+// });
+
+let refPhoto = document.get_post_thumbnail_id("reference");
+refPhoto.addEventListener()
