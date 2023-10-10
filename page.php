@@ -7,9 +7,30 @@
     	<h1><?php the_title(); ?></h1>
     
     	<?php the_content(); ?>
-	
+		<!-- Boucle principale -->
 
-	<?php endwhile; endif; ?>
+
+	
+		<?php new WP_Query( array( 'post_type' => 'post' ) );
+	
+	// Boucle personnalisée
+	if( have_posts() ) : while(have_posts() ) : 
+		the_post();
+        
+		// the_title(); // Titre de chaque article
+        // the_content(); // Contenu de chaque article
+		the_post_thumbnail();
+		endwhile; endif;
+		wp_reset_postdata(); // On réinitialise les données
+
+		// the_content(); // Contenu de la page
+
+	endwhile; endif; ?>
+	
+<!-- 
+	<?php 
+// endwhile; endif; 
+?> -->
 
 
 
