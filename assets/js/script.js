@@ -133,9 +133,10 @@ flechedroite.addEventListener("mouseover", function (event){
 
 // Ajout référence photo dans le formulaire
 
-// $(document).ready(function(){
-//     $(".wpcf7-text").val(get_the_ID('reference'));
-// });
+var refPhoto = document.querySelector('.ref');
+var btnCon = document.querySelector('.btn-contact');
+var inputRef = document.querySelector('.wpcf7-text');
+btnCon.addEventListener('click', function(){
+    document.querySelector('.wpcf7-text').value = querySelector('.ref').style.display="flex";
+});
 
-let refPhoto = document.get_post_thumbnail_id("reference");
-refPhoto.addEventListener()
