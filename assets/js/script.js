@@ -133,10 +133,20 @@ flechedroite.addEventListener("mouseover", function (event){
 
 // Ajout référence photo dans le formulaire
 
-var refPhoto = document.querySelector('.ref');
-var btnCon = document.querySelector('.btn-contact');
-var inputRef = document.querySelector('#reference');
-btnCon.addEventListener('click', function(){
-    inputRef.setAttribute('value', refPhoto);
-});
+// var refPhoto = document.querySelector('.ref').innerText;
+// var btnCon = document.querySelector('.btn-contact');
+// var inputRef = document.querySelector('#reference');
+// btnCon.addEventListener('click', function(){
+//     inputRef.setAttribute('value', refPhoto);
+// });
 
+jQuery(document).ready(function($){
+    // Ouvrir modale lors du clic sur bouton du single.php
+    $('.btn-contact').on('click', function(e) {
+        e.preventDefault();
+        // Récupérer la réf photo
+        var refPhoto = $('.ref').text();
+        // Mettre la ref dans le champ du formulaire
+        $('#reference').val(refPhoto);
+    });
+});
