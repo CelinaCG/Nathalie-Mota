@@ -44,11 +44,11 @@ btnContact.onclick = function() {
 // Images
 
 // récupération de l'id l'article photo -->
-$thumbnail_id = get_post_thumbnail_id();
+// $thumbnail_id = get_post_thumbnail_id();
 // récupération de l'url de la photo -->
-$thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'custom-size');
+// $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'custom-size');
 // Récupération de l'attribut ALT de l'image mise en avant pour une meilleure accessibilité
-$thumbnail_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
+// $thumbnail_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
 
 // Evènement flèches
 
@@ -133,20 +133,10 @@ flechedroite.addEventListener("mouseover", function (event){
 
 // Ajout référence photo dans le formulaire
 
-// var refPhoto = document.querySelector('.ref').innerText;
-// var btnCon = document.querySelector('.btn-contact');
-// var inputRef = document.querySelector('#reference');
-// btnCon.addEventListener('click', function(){
-//     inputRef.setAttribute('value', refPhoto);
-// });
-
-jQuery(document).ready(function($){
-    // Ouvrir modale lors du clic sur bouton du single.php
-    $('.btn-contact').on('click', function(e) {
-        e.preventDefault();
-        // Récupérer la réf photo
-        var refPhoto = $('.ref').text();
-        // Mettre la ref dans le champ du formulaire
-        $('#reference').val(refPhoto);
-    });
+var refPhoto = document.querySelector('.ref').innerText;
+var btnCon = document.querySelector('.btn-contact');
+var inputRef = document.querySelector('#reference');
+btnCon.addEventListener('click', function(){
+    inputRef.setAttribute('value', refPhoto);
 });
+
