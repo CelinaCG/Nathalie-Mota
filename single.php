@@ -4,7 +4,7 @@
 
 		<section class="bordure-description">
 			<h2><?php echo the_title() ?></h2>
-			<p class="description-photo ref">RÉFÉRENCE : <?php echo get_field('reference') ?></p>
+			<p class="description-photo">RÉFÉRENCE : <span class="ref"><?php echo get_field('reference') ?></span></p>
 			<p class="description-photo">CATÉGORIE : <?php echo get_the_terms(get_the_ID(),'categorie')[0]->name ?></p>
 			<p class="description-photo">FORMAT : <?php echo get_the_terms(get_the_ID(),'format')[0]->name ?></p>
 			<p class="description-photo">TYPE : <?php echo get_field('type') ?></p>
