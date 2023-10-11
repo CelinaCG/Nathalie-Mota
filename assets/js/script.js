@@ -135,8 +135,8 @@ flechedroite.addEventListener("mouseover", function (event){
 
 var refPhoto = document.querySelector('.ref');
 var btnCon = document.querySelector('.btn-contact');
-var inputRef = document.querySelector('.wpcf7-text');
+var inputRef = document.querySelector('#reference');
 btnCon.addEventListener('click', function(){
-    document.querySelector('.wpcf7-text').value = querySelector('.ref').style.display="flex";
+    inputRef.setAttribute('value', refPhoto);
 });
 
