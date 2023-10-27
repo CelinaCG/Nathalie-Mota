@@ -1,19 +1,19 @@
+<!-- Variables de stockage -->
+<?php
+	$refPhoto = get_field("reference");
+	$post = get_post();
+	$cat = get_the_terms($post->ID, "categorie");
+	$catname = $cat[0]->name;
+	$refType = get_field("type");
+	$refDate = get_the_date("Y");
+	$term = get_the_terms($post->ID, "format");
+	$termname = $term[0]->name;
+		
+?>
 <?php get_header(); ?>
+
 <div class="section-single">
 	<div class="detail-photo">
-
-		<!-- Variables de stockage -->
-		<?
-		$refPhoto = get_field("reference");
-		$post = get_post();
-		$cat = get_the_terms($post->ID, "categorie");
-		$catname = $cat[0]->name;
-		$refType = get_field("type");
-		$refDate = get_the_date("Y");
-		$term = get_the_terms($post->ID, "format");
-		$termname = $term[0]->name;
-		 
-		?>
 
 		<section class="bordure-description">
 			<h2><?php echo the_title() ?></h2>
