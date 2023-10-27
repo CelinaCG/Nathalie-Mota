@@ -1,12 +1,12 @@
 <!-- Variables de stockage -->
 <?php
 	$refPhoto = get_field("reference");
-	$post = get_post();
-	$cat = get_the_terms($post->ID, "categorie");
+	$post = get_the_ID();
+	$cat = get_the_terms($post, "categorie");
 	$catname = $cat[0]->name;
 	$refType = get_field("type");
 	$refDate = get_the_date("Y");
-	$term = get_the_terms($post->ID, "format");
+	$term = get_the_terms($post, "format");
 	$termname = $term[0]->name;
 		
 ?>
