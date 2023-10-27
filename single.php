@@ -2,13 +2,26 @@
 <div class="section-single">
 	<div class="detail-photo">
 
+		<!-- Variables de stockage -->
+		<?
+		$refPhoto = get_field("reference");
+		$post = get_post();
+		$cat = get_the_terms($post->ID, "categorie");
+		$catname = $cat[0]->name;
+		$refType = get_field("type");
+		$refDate = get_the_date("Y");
+		$term = get_the_terms($post->ID, "format");
+		$termname = $term[0]->name;
+		 
+		?>
+
 		<section class="bordure-description">
 			<h2><?php echo the_title() ?></h2>
-			<p class="description-photo">RÉFÉRENCE : <span class="ref"><?php echo get_field('reference') ?></span></p>
-			<p class="description-photo">CATÉGORIE : <?php echo get_the_terms(get_the_ID(),'categorie')[0]->name ?></p>
-			<p class="description-photo">FORMAT : <?php echo get_the_terms(get_the_ID(),'format')[0]->name ?></p>
-			<p class="description-photo">TYPE : <?php echo get_field('type') ?></p>
-			<p class="description-photo">ANNÉE : <?php echo get_the_date('Y') ?></p>
+			<p class="description-photo">RÉFÉRENCE : <span class="ref"><?php $refPhoto ?></span></p>
+			<p class="description-photo">CATÉGORIE : <?php $catname ?></p>
+			<p class="description-photo">FORMAT : <?php $termname ?></p>
+			<p class="description-photo">TYPE : <?php $refType ?></p>
+			<p class="description-photo">ANNÉE : <?php $refDate ?></p>
 		</section>
 
 		<section class="affichage-photo">
