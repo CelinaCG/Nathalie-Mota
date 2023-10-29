@@ -17,11 +17,11 @@
 
 		<section class="bordure-description">
 			<h2><?php echo the_title() ?></h2>
-			<p class="description-photo">RÉFÉRENCE : <span class="ref"><?php $refPhoto ?></span></p>
-			<p class="description-photo">CATÉGORIE : <?php $catname ?></p>
-			<p class="description-photo">FORMAT : <?php $termname ?></p>
-			<p class="description-photo">TYPE : <?php $refType ?></p>
-			<p class="description-photo">ANNÉE : <?php $refDate ?></p>
+			<p class="description-photo">RÉFÉRENCE : <span class="ref"><?php echo $refPhoto ?></span></p>
+			<p class="description-photo">CATÉGORIE : <?php echo $catname ?></p>
+			<p class="description-photo">FORMAT : <?php echo $termname ?></p>
+			<p class="description-photo">TYPE : <?php echo $refType ?></p>
+			<p class="description-photo">ANNÉE : <?php echo $refDate ?></p>
 		</section>
 
 		<section class="affichage-photo">
