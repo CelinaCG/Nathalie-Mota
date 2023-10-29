@@ -320,8 +320,9 @@ header {
 }
 
 .image-slider {
-    width: auto;
-    height: 77px;
+    width: 81px;
+    height: 71px;
+    object-fit: cover;
 }
 
 .align-arrows {
