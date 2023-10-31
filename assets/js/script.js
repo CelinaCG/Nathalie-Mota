@@ -50,85 +50,82 @@ btnContact.onclick = function() {
 // Récupération de l'attribut ALT de l'image mise en avant pour une meilleure accessibilité
 // $thumbnail_alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
 
-// Evènement flèches
 
-// Flèche gauche
-
-// let flecheGauche = document.querySelector(".flechegauche");
-// let clickFleche = 0;
-// flecheGauche.addEventListener("click", function() {
-// 	// Décrémentation de la position de l'image/slide
-// 	clickFleche--;
-// 	// Condition if pour définir position de la slide après incrémentation
-// 	if (clickFleche < 0) {
-	
-// 		clickFleche = slides.length -1;
-// 	}
-
-
-// });
-	
-
-// Flèche droite
-
-// let flecheDroite = document.querySelector(".flechedroite");
-// flecheDroite.addEventListener("click", function() {
-
-// 	// Incrémentation de la position de l'image
-// 	clickFleche++;
-// 	if (clickFleche > slides.length -1) {
-// 		clickFleche = 0;
-// 	}
-	
-// });
 
 // Carrousel
 
-const imageElement = document.querySelector(".image-slider");
-
-// Flèche gauche
+// let imageElement = document.querySelector(".image-slider");
 let flechegauche = document.querySelector(".flechegauche");
-// Ce gestionnaire ne sera exécuté qu'une fois
-// lorsque le curseur se déplace sur la liste
-flechegauche.addEventListener("mouseenter", function (event){
-        // on met l'accent sur la cible de mouseenter
-        // event.target.style.color = "purple";
-        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
+let flechedroite = document.querySelector(".flechedroite");
+// // Ce gestionnaire ne sera exécuté qu'une fois
+// // lorsque le curseur se déplace sur la liste
+// flechegauche.addEventListener("mouseenter", function (event){
+//         // on met l'accent sur la cible de mouseenter
+//         // event.target.style.color = "purple";
+//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
 
-    },
-    false,
-);
+//     },
+//     false,
+// );
 
-// Ce gestionnaire sera exécuté à chaque fois que le curseur
-// se déplacera sur un autre élément de la liste
-flechegauche.addEventListener("mouseover", function (event){
-        // on met l'accent sur la cible de mouseover
-        // event.target.style.color = "orange";
-        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
+// Test relier l'image aux flèches
 
-    },
-    false,
-);
+let clickFleche = 0;
+
+
+flechegauche.addEventListener("click", function() {
+    clickFleche--;
+    if(clickFleche < 0){
+        console.log("Bouton gauche cliqué !")
+        clickFleche = imageElement.length -1;
+    }
+    // Changer l'image
+    let imageElement = document.querySelector(".image-slider");
+    // let imageElement.src ="<?php echo get_the_post_thumbnail_url($previous) ?>";
+
+});
+flechedroite.addEventListener("click", function() {
+    clickFleche++;
+    if(clickFleche = imageElement.length -1){
+        console.log("Bouton droit cliqué !")
+        clickFleche = 0;
+    }
+    // Changer l'image
+    let imageElement = document.querySelector(".image-slider");
+    // let imageElement.src ="<?php echo get_the_post_thumbnail_url($next) ?>";
+
+});
+
+// // Ce gestionnaire sera exécuté à chaque fois que le curseur
+// // se déplacera sur un autre élément de la liste
+// flechegauche.addEventListener("mouseover", function (event){
+//         // on met l'accent sur la cible de mouseover
+//         // event.target.style.color = "orange";
+//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
+
+//     },
+//     false,
+// );
 
 // Flèche droite
-let flechedroite = document.querySelector(".flechedroite");
-flechedroite.addEventListener("mouseenter", function (event){
-        // on met l'accent sur la cible de mouseenter
-        // event.target.style.color = "purple";
-        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
 
-    },
-    false,
-);
+// flechedroite.addEventListener("mouseenter", function (event){
+//         // on met l'accent sur la cible de mouseenter
+//         // event.target.style.color = "purple";
+//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
 
-flechedroite.addEventListener("mouseover", function (event){
-        // on met l'accent sur la cible de mouseover
-        // event.target.style.color = "orange";
-        event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
+//     },
+//     false,
+// );
 
-    },
-    false,
-);
+// flechedroite.addEventListener("mouseover", function (event){
+//         // on met l'accent sur la cible de mouseover
+//         // event.target.style.color = "orange";
+//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
+
+//     },
+//     false,
+// );
 
 
 // Ajout référence photo dans le formulaire
