@@ -35,38 +35,39 @@
 		<p class="contact btn-contact">Contact</p>
 		</section>
 		<section class="carrousel">
+			<div>
 
-			<!-- Diaporama des images -->
-			<!-- Mise en place de la fonction pour mettre un élement précédent ou suivant -->
-			<?php 
-				$previous = get_previous_post();
-				$next = get_next_post();
-			?>
+				<!-- Diaporama des images -->
+				<!-- Mise en place de la fonction pour mettre un élement précédent ou suivant -->
+				<?php 
+					$previous = get_previous_post();
+					$next = get_next_post();
+				?>
+		
+				<!-- Mise en place des liens des pages single.php correspondant aux images -->
+				<?php if(get_previous_post()){?>
+					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">
+				<?php }
+				elseif(get_next_post() ) {?>
+					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
+				<?php }?>
 
-			<!-- Mise en place des liens des pages single.php correspondant aux images -->
-			<?php if(get_previous_post()){?>
-				<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">
-			<?php }
-			elseif(get_next_post() ) {?>
-				<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
-			<?php }?>
-
-			<!-- Le lien de la single.php correspondant à l'image précédente ou suivante doit être cliquable via chacune des flèches. L'image du diaporama ne doit pas être cliquable. -->
-			<div class="align-arrows">
-				<div>
-					<!-- Lien de la single.php précédente doit englober la flèche gauche pour la rendre cliquable -->
-					<a href="<?php echo get_the_permalink($previous) ?>">
-						<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
-					</a>
-				</div>
-				<div>
-					<!-- Lien de la single.php suivante doit englober la flèche droite pour la rendre cliquable -->
-					<a href="<?php echo get_the_permalink($next) ?>">
-						<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
-					</a>
+				<!-- Le lien de la single.php correspondant à l'image précédente ou suivante doit être cliquable via chacune des flèches. L'image du diaporama ne doit pas être cliquable. -->
+				<div class="align-arrows">
+					<div>
+						<!-- Lien de la single.php précédente doit englober la flèche gauche pour la rendre cliquable -->
+						<a href="<?php echo get_the_permalink($previous) ?>">
+							<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
+						</a>
+					</div>
+					<div>
+						<!-- Lien de la single.php suivante doit englober la flèche droite pour la rendre cliquable -->
+						<a href="<?php echo get_the_permalink($next) ?>">
+							<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
+						</a>
+					</div>
 				</div>
 			</div>
-
 		</section>
 	</div>
 	<section>
