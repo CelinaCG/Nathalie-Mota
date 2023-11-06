@@ -240,7 +240,6 @@ header {
     text-transform: uppercase;
     display: flex;
     align-self: flex-end;
-    /* flex-direction: column; */
 }
 
 
@@ -364,6 +363,30 @@ header {
 /* Main page */
 
 .container {width: 1440px;}
+
+/* Images apparentées */
+
+/* .related-images {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.related-image {
+    float: left;
+    margin: 10px;
+    width: 50%;
+}
+
+.related-image img {
+    max-width: 100%;
+    height: auto;
+} */
+.gallery-block{
+    width: 1148px;
+}
+
 
 /* Responsive */
 
