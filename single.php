@@ -74,24 +74,17 @@
 		<h3>Vous aimerez aussi</h3>
 
 		<!-- Boucle photos apparentées -->
-		<?php
+
+		<div class="gallery-block">
+    		<?php display_gallery(get_the_ID()); ?>
+		</div>
 	
-		// Create the variable for the large image src link
-		// $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
-		
-		// ?>
 		
 	
-		<!-- // <a href="<?php 
-		// echo the_permalink(); $medium_image_url[0]; 
-		?>" title="<?php 
-		// the_title_attribute();
-		?>"> -->
-		
-		<!-- // <?php 
-		// the_post_thumbnail('medium'); 
-		?></a> -->
-		
+	
+	
+
+
 		
 	
 	
