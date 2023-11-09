@@ -2,7 +2,7 @@
 
 	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 		<!-- Appel template-part du hero header -->
-		<?php get_template_part('template-parts/photo' , 'block'); ?>
+		<?php get_template_part('template-parts/custom' , 'header'); ?>
     
     	<h1><?php the_title(); ?></h1>
     
