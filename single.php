@@ -75,9 +75,19 @@
 
 		<!-- Boucle photos apparentées -->
 
+		<!-- Test 1 -->
+
 		<div class="gallery-block">
-    		<?php display_gallery(get_the_ID()); ?>
+    		<?php 
+			display_gallery(get_the_ID());
+			?>
 		</div>
+
+		<!-- Test 2 -->
+		<div class="gallery-block">
+    		<?php get_related_images(get_the_ID()); ?>
+		</div>
+	
 	
 		
 	
