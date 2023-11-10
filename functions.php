@@ -74,6 +74,32 @@ register_nav_menus( array(
 	
 // add_action('wp_enqueue_scripts', 'featured_pictures_scripts');
 
+function filter_photos() {
+    $catSlug = $_POST['category'];
+  
+    $ajaxposts = new WP_Query([
+        'post_type' => 'photo',
+        'posts_per_page' => -1,
+        'category_name' => $catSlug,
+        // 'orderby' => 'menu_order', 
+        // 'order' => 'desc',
+    ]);
+    $response = '';
+  
+    if($ajaxposts->have_posts()) {
+        while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+        $response .= get_template_part('template-parts/photo' , 'block');
+        endwhile;
+    } else {
+        $response = 'empty';
+    }
+  
+    echo $response;
+    exit;
+}
+add_action('wp_ajax_filter_photos', 'filter_photos');
+add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
+
 
 // Images apparentées
 
