@@ -16,8 +16,6 @@
         while ($the_query -> have_posts()) {
             $the_query -> the_post();
             the_post_thumbnail(); 
-            wp_reset_postdata();
-            exit;
         } 
 
         
@@ -29,7 +27,7 @@
         ?>
         <?php else : ?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-    <?php endif; ?>
+    <?php endif;  ?>
 
 
     <!-- <img class="photoevent" src="<?php 
