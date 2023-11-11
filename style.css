@@ -329,6 +329,30 @@ header {
     justify-content: space-between;
 }
 
+/* Accueil */
+
+.container {width: 1440px;}
+
+.banner-style {position: relative;}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+/* Images apparentées */
+
+.gallery-block{
+    width: 1148px;
+}
+
+
 /* Footer */
 
 .site__footer {
@@ -360,33 +384,6 @@ header {
 
 .menu-footer-container {margin-right: 20px;}
 
-/* Main page */
-
-.container {width: 1440px;}
-
-/* Images apparentées */
-
-/* .related-images {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.related-image {
-    float: left;
-    margin: 10px;
-    width: 50%;
-}
-
-.related-image img {
-    max-width: 100%;
-    height: auto;
-} */
-.gallery-block{
-    width: 1148px;
-}
-
 
 /* Responsive */
 
@@ -416,7 +413,6 @@ header {
         top: 126px;
         background-color: #E00000;
         transition: left 0.5s ease;
-        
     }
     
     .sidenav-burger a{
@@ -441,6 +437,12 @@ header {
     .logo {margin-left: 0;}
 
     #nav-items{margin-right: 0;}
+
+    /* Accueil */
+
+    .title {
+        font-size: 27.59px;
+    }
 
     /* Footer */
 
