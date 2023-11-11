@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+	<section>
 	<?php 
 	// if( have_posts() ) : while( have_posts() ) : the_post(); 
 	?>
@@ -7,8 +7,14 @@
 		<?php 
 		// get_template_part('template-parts/custom' , 'header');
 		?>
-    
-    	<h1><?php the_title(); ?></h1>
+	
+		<!-- Bannière accueil -->
+		<div class="section-single banner-style">
+			<h1 class="title"><?php the_title(); ?></h1>
+
+			<img src="<?php echo get_template_directory_uri() . '/assets/images/photoevent.jpeg'; ?> " alt="bannière">
+		</div>
+    	
     
     	<?php 
 		the_content(); 
@@ -37,7 +43,7 @@
 	
 
  
-
+	</section>
 
 
 
