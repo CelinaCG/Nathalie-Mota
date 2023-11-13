@@ -47,9 +47,12 @@
 				<!-- Mise en place des liens des pages single.php correspondant aux images -->
 				<?php if(get_previous_post()){?>
 					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">
+					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
+
 				<?php }
 				elseif(get_next_post() ) {?>
-					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
+					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">
+					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">			
 				<?php }?>
 
 				<!-- Le lien de la single.php correspondant à l'image précédente ou suivante doit être cliquable via chacune des flèches. L'image du diaporama ne doit pas être cliquable. -->
@@ -101,23 +104,6 @@
 
 
 	</section>
-
-	<!-- Section filtres pour page d'acceuil -->
-
-	<!-- Affichage catégories -->
-
-	<?php $categories = get_categories(); ?>
-	<ul class="cat-list">
-	<li><a class="cat-list_item active" href="#!" data-slug="">Toutes les photos</a></li>
-
-	<?php foreach($categories as $category) : ?>
-		<li>
-		<a class="cat-list_item" href="#!" data-slug="<?= $category->slug; ?>">
-			<?= $category->name; ?>
-		</a>
-		</li>
-	<?php endforeach; ?>
-	</ul>
 
 
 	
