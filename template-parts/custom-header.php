@@ -1,38 +1,28 @@
 <!-- Bloc d'affichage d'une photo de la liste pour page accueil -->
 
-<section class="hero-header">
+<section>
     <?php 
     $the_query = new WP_Query(array( 
         'orderby' => 'rand',
         'posts_per_page' => 1 ,
-        'post_type' => 'photo'
+        'post_type' => 'photos'
     ));
-    
     
     if($the_query -> have_posts()):
 
-    // <!-- Boucle -->
+    // Boucle
     
-        while ($the_query -> have_posts()) {
-            $the_query -> the_post();
-            the_post_thumbnail(); 
-        } 
+    while ($the_query -> have_posts()) {
+        $the_query -> the_post();
+        the_post_thumbnail(); 
+    } 
 
-        
-        // endwhile; 
-        // Restore original Post Data.
-        wp_reset_postdata();
-
-        // endif; 
-        ?>
-        <?php else : ?>
-	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-    <?php endif;  ?>
-
-
-    <!-- <img class="photoevent" src="<?php 
-    // echo get_template_directory_uri() . '/assets/images/photoevent.jpeg' 
-    ?> " alt="photoevent"> -->
+    // Restore original Post Data.
+    wp_reset_postdata();
+    ?>
+    <?php else : ?>
+	<p><?php esc_html_e( 'Désolé, il n\'y a aucun post qui correspond à vos critères.' ); ?></p>
+    <?php endif; ?>
         
         
 
