@@ -73,10 +73,14 @@
 			</div>
 		</section>
 	</div>
-	<section>
+	<div class="related-pictures">
 		<h3>Vous aimerez aussi</h3>
 
 		<!-- Boucle photos apparentées -->
+		<div class="">
+		<?php get_template_part('template-parts/photo' , 'block'); ?>
+		</div>
+		
 
 		<!-- Test 1 -->
 
@@ -105,7 +109,7 @@
 	
 
 
-	</section>
+	</div>
 
 
 	
