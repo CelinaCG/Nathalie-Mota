@@ -1,15 +1,15 @@
-// Get the modal
+// Apparition modale
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
+// Activation bouton de la modale
 var btn = document.querySelector('.contact');
 
-// When the user clicks on the button, open the modal
+// Ouverture de la modale au clic
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// Fermeture de la modale au clic n'importe où à l'extérieur
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -41,43 +41,39 @@ btnContact.onclick = function() {
     modal.style.display = "block";
 }
 
-// Images
+// Hover diaporama single page
 
+var diapo = document.querySelector('.display-slider');
+var arrowleft = document.querySelector('.flechegauche');
+var arrowright = document.querySelector('.flechedroite');
 
-
-// Carrousel
-
-
-// // Ce gestionnaire sera exécuté à chaque fois que le curseur
-// // se déplacera sur un autre élément de la liste
-// flechegauche.addEventListener("mouseover", function (event){
-//         // on met l'accent sur la cible de mouseover
-//         // event.target.style.color = "orange";
-//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
-
-//     },
-//     false,
-// );
+// Flèche gauche
+arrowleft.addEventListener('mouseenter', function(){
+    // Affichage de l'image au survol de la flèche
+    document.querySelector('.display-slider').style.display="flex"; 
+    // Non affichage de l'ancienne image au survol
+    document.querySelector('.image-slider').style.display="none";
+});
+arrowleft.addEventListener('mouseleave', function(){
+    // Non affichage de l'image au survol de la flèche
+    document.querySelector('.display-slider').style.display="none"; 
+    // Affichage de l'ancienne image au survol
+    document.querySelector('.image-slider').style.display="flex";
+});
 
 // Flèche droite
-
-// flechedroite.addEventListener("mouseenter", function (event){
-//         // on met l'accent sur la cible de mouseenter
-//         // event.target.style.color = "purple";
-//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($next) ?>";
-
-//     },
-//     false,
-// );
-
-// flechedroite.addEventListener("mouseover", function (event){
-//         // on met l'accent sur la cible de mouseover
-//         // event.target.style.color = "orange";
-//         event.target.imageElement.src = "<?php echo get_the_post_thumbnail_url($previous) ?>";
-
-//     },
-//     false,
-// );
+arrowright.addEventListener('mouseenter', function(){
+    // Affichage de l'image au survol de la flèche
+    document.querySelector('.display-slider').style.display="flex";
+    // Non affichage de l'ancienne image au survol
+    document.querySelector('.image-slider').style.display="none";
+});
+arrowright.addEventListener('mouseleave', function(){
+    // Non affichage de l'image au survol de la flèche
+    document.querySelector('.display-slider').style.display="none"; 
+    // Affichage de l'ancienne image au survol
+    document.querySelector('.image-slider').style.display="flex";
+});
 
 
 // Ajout référence photo dans le formulaire
