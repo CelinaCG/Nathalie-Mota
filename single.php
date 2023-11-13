@@ -80,16 +80,18 @@
 
 		<!-- Test 1 -->
 
-		<div class="gallery-block">
+		<!-- <div class="gallery-block">
     		<?php 
-			display_gallery(get_the_ID());
+			// display_gallery(get_the_ID());
 			?>
 		</div>
 
-		<!-- Test 2 -->
-		<div class="gallery-block">
-    		<?php get_related_images(get_the_ID()); ?>
-		</div>
+		<-- Test 2 -->
+		<!-- <div class="gallery-block"> -->
+    		<?php 
+			// get_related_images(get_the_ID());
+			 ?>
+		<!-- </div> -->
 	
 	
 		
