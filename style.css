@@ -333,6 +333,20 @@ header {
     justify-content: space-between;
 }
 
+/* Images apparentées */
+
+.col-photo {
+    display: flex;
+    flex-direction: row;
+}
+
+.col-photo img {
+    width: 50%;
+    height: 495px;
+    object-fit: cover;
+}
+
+
 /* Accueil */
 
 .container {width: 1440px;}
@@ -350,11 +364,6 @@ header {
     text-transform: uppercase;
 }
 
-/* Images apparentées */
-
-.gallery-block{
-    width: 1148px;
-}
 
 
 /* Footer */
