@@ -1,4 +1,5 @@
 <!-- Affichage photos apparentées -->
+<div class="col-photo">
 
 <?php 
     $the_query = new WP_Query(array(
@@ -18,4 +19,4 @@
 <?php else : ?>
 <p><?php esc_html_e( 'Désolé, il n\'y a aucun post qui correspond à vos critères.' ); ?></p>
 <?php endif; ?>
-
+</div>
