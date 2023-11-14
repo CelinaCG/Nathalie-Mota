@@ -46,28 +46,32 @@
 		
 				<!-- Mise en place des liens des pages single.php correspondant aux images -->
 				<?php if(get_previous_post()){?>
-					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">
-					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">			
+					<img class="image-slider display-image" src="<?php echo get_the_post_thumbnail_url($previous) ?>" alt="photo précédente">
+					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>" alt="photo suivante">			
 
 				<?php }
 				elseif(get_next_post() ) {?>
-					<img class="image-slider" src="<?php echo get_the_post_thumbnail_url($next) ?>">
-					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>">			
+					<img class="image-slider display-image" src="<?php echo get_the_post_thumbnail_url($next) ?>" alt="photo suivante">
+					<img class="image-slider display-slider" src="<?php echo get_the_post_thumbnail_url($previous) ?>" alt="photo précédente">			
 				<?php }?>
 
 				<!-- Le lien de la single.php correspondant à l'image précédente ou suivante doit être cliquable via chacune des flèches. L'image du diaporama ne doit pas être cliquable. -->
 				<div class="align-arrows">
 					<div>
 						<!-- Lien de la single.php précédente doit englober la flèche gauche pour la rendre cliquable -->
+						<?php if(get_previous_post()): ?>
 						<a href="<?php echo get_the_permalink($previous) ?>">
 							<img class="flechegauche" src="<?php echo get_stylesheet_directory_uri($previous) . '/assets/images/arrow-left.png' ?>">
 						</a>
+						<?php endif; ?>
 					</div>
 					<div>
 						<!-- Lien de la single.php suivante doit englober la flèche droite pour la rendre cliquable -->
+						<?php if(get_next_post()): ?>
 						<a href="<?php echo get_the_permalink($next) ?>">
 							<img class="flechedroite" src="<?php echo get_stylesheet_directory_uri($next) . '/assets/images/arrow-right.png' ?>">
 						</a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
