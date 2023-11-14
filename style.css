@@ -326,6 +326,8 @@ header {
 
 .display-slider {display: none;}
 
+.display-image {display: block;}
+
 .align-arrows {
     display: flex;
     justify-content: space-between;
