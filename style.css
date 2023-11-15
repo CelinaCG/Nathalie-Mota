@@ -336,12 +336,13 @@ header {
 /* Images apparentées */
 
 .col-photo {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .col-photo img {
-    width: 50%;
+    width: 100%;
     height: 495px;
     object-fit: cover;
 }
