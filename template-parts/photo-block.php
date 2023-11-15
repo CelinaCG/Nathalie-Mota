@@ -5,8 +5,15 @@
     $the_query = new WP_Query(array(
         'post_type' => 'photos',
         'posts_per_page' => 2,
-        'order_by' => 'date',
-        'order' => 'desc',
+        'tax_query' => array(
+            array(
+                // Prendre les images de la taxonomie de "catégorie"
+                'taxonomy' => 'categorie',
+                // Prendre l'ID de la photo affichée sur le single.php
+                'terms' => array(get_queried_object()->term_id),
+                'field' => 'term_id',
+            ),
+        ),
     ));
 
     if($the_query->have_posts()):
