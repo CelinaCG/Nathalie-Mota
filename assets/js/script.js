@@ -49,29 +49,29 @@ var arrowright = document.querySelector('.flechedroite');
 
 // Flèche gauche
 arrowleft.addEventListener('mouseenter', function(){
-    // Non affichage de l'ancienne image au survol
-    document.querySelector('.display-slider').style.display="none"; 
-    // Affichage de l'ancienne image au survol
-    document.querySelector('.display-image').style.display="block";
+    // Affichage de l'image au survol
+    document.querySelector('.display-slider').style.display="block"; 
+    // Non affichage de l'image au survol
+    document.querySelector('.display-image').style.display="none";
 });
 arrowleft.addEventListener('mouseleave', function(){
-    // Affichage de l'ancienne image au survol
-    document.querySelector('.display-slider').style.display="block"; 
-    // Non affichage de l'image au survol de la flèche
-    document.querySelector('.display-image').style.display="none";
+    // Non affichage de l'image au survol
+    document.querySelector('.display-slider').style.display="none"; 
+    // Affichage de l'image au survol
+    document.querySelector('.display-image').style.display="block";
 });
 
 // Flèche droite
 arrowright.addEventListener('mouseenter', function(){
-    // Affichage de l'image au survol de la flèche
+    // Affichage de l'image au survol
     document.querySelector('.display-slider').style.display="block";
-    // Non affichage de l'ancienne image au survol
+    // Non affichage de l'image au survol
     document.querySelector('.display-image').style.display="none";
 });
 arrowright.addEventListener('mouseleave', function(){
-    // Non affichage de l'image au survol de la flèche
+    // Non affichage de l'image au survol
     document.querySelector('.display-slider').style.display="none"; 
-    // Affichage de l'ancienne image au survol
+    // Affichage de l'image au survol
     document.querySelector('.display-image').style.display="block";
 });
 
