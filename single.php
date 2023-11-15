@@ -84,40 +84,12 @@
 		
 		<?php get_template_part('template-parts/photo' , 'block'); ?>
 		
-		
-
-		<!-- Test 1 -->
-
-		<!-- <div class="gallery-block">
-    		<?php 
-			// display_gallery(get_the_ID());
-			?>
+		<div class="center-btn">
+			<p class="btn-photos btn-contact">Toutes les photos</p>
 		</div>
-
-		<-- Test 2 -->
-		<!-- <div class="gallery-block"> -->
-    		<?php 
-			// get_related_images(get_the_ID());
-			 ?>
-		<!-- </div> -->
 	
-	
-		
-	
-	
-	
-
-
-		
-	
-	
-
 
 	</div>
-
-
-	
-
 </div>
 
 	
