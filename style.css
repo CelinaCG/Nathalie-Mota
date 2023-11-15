@@ -347,6 +347,12 @@ header {
     object-fit: cover;
 }
 
+.btn-photos {margin: 4rem 0 4rem 0;}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
+}
 
 /* Accueil */
 
