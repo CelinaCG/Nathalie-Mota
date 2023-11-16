@@ -49,12 +49,6 @@ var arrowright = document.querySelector('.flechedroite');
 
 // Flèche gauche
 arrowleft.addEventListener('mouseenter', function(){
-    // Affichage de l'image au survol
-    document.querySelector('.display-slider').style.display="block"; 
-    // Non affichage de l'image au survol
-    document.querySelector('.display-image').style.display="none";
-});
-arrowleft.addEventListener('mouseleave', function(){
     // Non affichage de l'image au survol
     document.querySelector('.display-slider').style.display="none"; 
     // Affichage de l'image au survol
@@ -68,13 +62,6 @@ arrowright.addEventListener('mouseenter', function(){
     // Non affichage de l'image au survol
     document.querySelector('.display-image').style.display="none";
 });
-arrowright.addEventListener('mouseleave', function(){
-    // Non affichage de l'image au survol
-    document.querySelector('.display-slider').style.display="none"; 
-    // Affichage de l'image au survol
-    document.querySelector('.display-image').style.display="block";
-});
-
 
 // Ajout référence photo dans le formulaire
 
