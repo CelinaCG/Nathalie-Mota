@@ -18,26 +18,11 @@
 		the_content(); 
 		?>
 	
+		<!-- Section filtres pour page d'acceuil -->
 
-	
-	
+		<!-- Affichage catégories -->
 
-	<!-- Section filtres pour page d'acceuil -->
 
-	<!-- Affichage catégories -->
-
-	<?php $categories = get_categories(); ?>
-	<ul class="cat-list">
-	<li><a class="cat-list_item active" href="#!" data-slug="">Toutes les photos</a></li>
-
-	<?php foreach($categories as $category) : ?>
-		<li>
-		<a class="cat-list_item" href="#!" data-slug="<?= $category->slug; ?>">
-			<?= $category->name; ?>
-		</a>
-		</li>
-	<?php endforeach; ?>
-	</ul>
 		
 	
 
