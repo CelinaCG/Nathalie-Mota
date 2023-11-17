@@ -29,7 +29,7 @@
     if($the_query->have_posts()):
     while ($the_query -> have_posts()) {
         $the_query -> the_post();
-        echo 'div class="hover-photo"';
+        echo '<div class="hover-photo">';
         the_post_thumbnail(); 
         echo '</div>';
         echo '<div id="myHover" class="lightbox-hover">';
