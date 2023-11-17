@@ -1,3 +1,10 @@
+<!-- Variables de stockage -->
+<?php
+	$refPhoto = get_field("reference");
+	$cat = get_the_terms($post, "categorie");
+	$catname = $cat[0]->name;	
+?>
+
 <!-- Affichage photos apparentées -->
 <div class="col-photo">
 
@@ -22,7 +29,18 @@
     if($the_query->have_posts()):
     while ($the_query -> have_posts()) {
         $the_query -> the_post();
+        echo 'div class="hover-photo"';
         the_post_thumbnail(); 
+        echo '</div>';
+        echo '<div id="myHover" class="lightbox-hover">';
+        // the_post_thumbnail();
+        echo '<img class="oeil" src="' . get_template_directory_uri() . '/assets/images/Icon_eye.png" >';
+        echo '<img class="zoom" src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
+        echo '<p>RÉFÉRENCE : <?php echo $refPhoto ?></p>';
+        echo '<p>CATÉGORIE : <?php echo $catname ?></p>';
+        echo '</div>';
+
+        // Ajouter hoover qui affiche icones oeil et agradissement, ref photo et categorie
     } 
     wp_reset_postdata();
 ?>
