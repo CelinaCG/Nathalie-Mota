@@ -72,22 +72,22 @@ btnCon.addEventListener('click', function(){
     inputRef.setAttribute('value', refPhoto);
 });
 
-// Hover photos apparentées
+// // Hover photos apparentées
 
-// Elément hover
-var hover = document.getElementById('myHover');
+// // Elément hover
+// var hover = document.getElementById('myHover');
 
-// Lieu d'activation du hover
-var photoHover = document.querySelector('.hover-photo');
+// // Lieu d'activation du hover
+// var photoHover = document.querySelector('.hover-photo');
 
-// Activation du hover au survol de la photo
-photoHover.addEventListener("mouseenter", function() {
-    hover.style.display = "block";
-});
+// // Activation du hover au survol de la photo
+// photoHover.addEventListener("mouseenter", function() {
+//     hover.style.display = "block";
+// });
 
-// Désactivation du hover en sortant de la photo
-photoHover.addEventListener("mouseleave", function() {
-    hover.style.display = "none";
-});
+// // Désactivation du hover en sortant de la photo
+// photoHover.addEventListener("mouseleave", function() {
+//     hover.style.display = "none";
+// });
 
 
