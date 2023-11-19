@@ -32,11 +32,15 @@
             // Mise en place du hover
             echo '<div class="hover-photo">';
             the_post_thumbnail(); 
+            echo '<div class="lightbox-hover-wrapper">';
             echo '<div class="lightbox-hover">';
             echo '<img class="zoom" src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
             echo '<img class="oeil" src="' . get_template_directory_uri() . '/assets/images/Icon_eye.png" >';
-            echo '<p class="legend">RÉFÉRENCE : <?php echo $refPhoto ?></p>';
-            echo '<p class="legend">CATÉGORIE : <?php echo $catname ?></p>';
+            echo '<div class="legend-align">';
+            echo '<div><p class="legend">RÉFÉRENCE : <?php echo $refPhoto ?></p></div>';
+            echo '<div><p class="legend">CATÉGORIE : <?php echo $catname ?></p></div>';
+            echo '</div>';
+            echo '</div>';
             echo '</div>';
             echo '</div>';
         } 
