@@ -356,62 +356,76 @@ header {
 
 /* Hover */
 
-.hover-photo {
-    position:relative;
+.hover-photo {position:relative;}
 
-    cursor: pointer;
-}
-
-.lightbox-hover {
-    display: block;
-    opacity: 0;
-}
+.lightbox-hover {display: block;}
 
 .lightbox-hover img {
-    width:40px;
+    width: 40px;
     height: auto;
 }
 
-/* .oeil {
-    width:46px;
-    height:auto;
-}
 
-.zoom {
-    width:34px;
-    height:auto;
-} */
-
-.hover-photo:hover .lightbox-hover {
-    background-color: rgb(0, 0, 0, 0.7);
-    opacity: 1;
-}
+.hover-photo:hover ~ .lightbox-hover {opacity: 0;}
 
 .legend {
     color:#FFFFFF;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
 }
 
-/* .hover-photo:hover .lightbox-hover {
-    /* display: block; */
-    /* position: absolute; */
-    /* z-index: 1; Sit on top */
-    /* left: 0;
+.hover-photo .lightbox-hover {
+    position: absolute;
     top: 0;
-    width: 100%; /* Full width */
-    /* height: 100%; /* Full height */
-    /* overflow: auto; Enable scroll if needed */ 
-    /* background-color: rgb(0,0,0); Fallback color */
-    /* background-color: rgb(0, 0, 0, 0.7); */
-    /* opacity: 1; */
+    width: 60vh;
+    height: 53vh;
+    background-color: rgb(0, 0, 0, 0.7);
+    opacity: 0;
+}
 
-/* } */
+.hover-photo:hover .lightbox-hover {opacity: 1;}
 
+/* Essai de positionnement des éléments hover */
 
+.lightbox-hover-wrapper {
+    position: relative;
+}
 
+.lightbox-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 10px;
+}
 
+.oeil {
+    width: 46px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.zoom {
+    width: 34px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.legend-align {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* Exemple à effacer si pas utile */
 .lightbox {
