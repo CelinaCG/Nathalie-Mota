@@ -356,10 +356,42 @@ header {
 
 /* Hover */
 
-.lightbox-hover {display: block;}
+.hover-photo {
+    position:relative;
 
-.hover-photo:hover ~ .lightbox-hover {
+    cursor: pointer;
+}
+
+.lightbox-hover {
+    display: block;
     opacity: 0;
+}
+
+.lightbox-hover img {
+    width:40px;
+    height: auto;
+}
+
+/* .oeil {
+    width:46px;
+    height:auto;
+}
+
+.zoom {
+    width:34px;
+    height:auto;
+} */
+
+.hover-photo:hover .lightbox-hover {
+    background-color: rgb(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+.legend {
+    color:#FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 /* .hover-photo:hover .lightbox-hover {
@@ -377,7 +409,7 @@ header {
 
 /* } */
 
-.hover-photo:hover .lightbox-hover {background: blue;}
+
 
 
 
