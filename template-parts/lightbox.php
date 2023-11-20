@@ -5,7 +5,7 @@
 	$catname = $cat[0]->name;	
 ?>
 <!-- Lightbox -->
-<div id="myLightbox" class="modal">
+<div id="myLightbox" class="lightbox-overlay">
     
     <!-- Contenu lightbox -->
     <div class="lightbox-content">
