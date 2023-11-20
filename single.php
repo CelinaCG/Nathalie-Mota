@@ -85,7 +85,7 @@
 		<?php get_template_part('template-parts/photo' , 'block'); ?>
 		
 		<div class="center-btn">
-			<p class="btn-photos btn-contact">Toutes les photos</p>
+			<p class="btn-photos btn-contact"><a href="<?php echo esc_url(home_url('/')); ?>">Toutes les photos</p>
 		</div>
 	
 
