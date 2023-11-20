@@ -358,15 +358,10 @@ header {
 
 .hover-photo {position:relative;}
 
-.lightbox-hover {display: block;}
-
 .lightbox-hover img {
     width: 40px;
     height: auto;
 }
-
-
-.hover-photo:hover ~ .lightbox-hover {opacity: 0;}
 
 .legend {
     color:#FFFFFF;
