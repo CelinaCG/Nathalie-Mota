@@ -29,17 +29,20 @@
         if($the_query->have_posts()):
         while ($the_query -> have_posts()) {
             $the_query -> the_post();
+            // Variables de stockage
+            $refPhoto = get_field("reference");
+            $cat = get_the_terms($post, "categorie");
+            $catname = $cat[0]->name;	
+
             // Mise en place du hover
             echo '<div class="hover-photo">';
             the_post_thumbnail(); 
-            echo '<div class="lightbox-hover-wrapper">';
             echo '<div class="lightbox-hover">';
-            echo '<img class="zoom" src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
+            echo '<img class="zoom lightbox-open" src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
             echo '<img class="oeil" src="' . get_template_directory_uri() . '/assets/images/Icon_eye.png" >';
             echo '<div class="legend-align">';
-            echo '<div><p class="legend">RÉFÉRENCE : <?php echo $refPhoto ?></p></div>';
-            echo '<div><p class="legend">CATÉGORIE : <?php echo $catname ?></p></div>';
-            echo '</div>';
+            echo '<div class="legend ref-photo">' . $refPhoto . '</div>';
+            echo '<div class="legend cat">' . $catname . '</div>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
