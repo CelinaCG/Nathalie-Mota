@@ -1,16 +1,17 @@
-var $lightbox = $('.lightbox'); // L'élément HTML
+// Prendre le lightbox et les éléments de l'overlay
+var lightbox = document.getElementById('myLightbox');
 
-// Ouvrir la lightbox
-$('.col-photo img').click(function(e) {
-    e.preventDefault(); // On empêche le changement de page
-    var url = $(this).attr('href'); // On récupère l'URL de l'image dans href
+// Activation du lightbox par l'image zoom
+var zoomLighbox = document.querySelector('.lightbox-open');
 
-    // On applique l'image en fond
-    $lightbox.css('background-image', 'url(' + url + ')'); 
-    $lightbox.fadeIn(); // Et on fait apparaitre la lightbox
-});
+// Ouverture de la lighbox au clic sur l'image zoom
+zoomLighbox.onclick = function() {
+    lightbox.style.display = "block";
+}
 
-// Fermer la lightbox
-$lightbox.click(function () {
-    $lightbox.fadeOut();
-});
+// Fermeture de la modale au clic sur la croix
+window.onclick = function(event) {
+    if (event.target == lightbox) {
+        lightbox.style.display = "none";
+    }
+}
