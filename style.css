@@ -430,6 +430,8 @@ header {
 
 /* Lightbox */
 
+#myLightbox {display: none;}
+
 .lightbox-content {
     position: fixed;
     top: 0;
@@ -437,7 +439,6 @@ header {
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
     z-index: 1000;
 }
 
