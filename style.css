@@ -349,6 +349,8 @@ header {
 
 .btn-photos {margin: 4rem 0 4rem 0;}
 
+.btn-photos a {text-decoration: none;}
+
 .center-btn {
     display: flex;
     justify-content: center;
