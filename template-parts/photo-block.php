@@ -1,10 +1,3 @@
-<!-- Variables de stockage -->
-<?php
-	$refPhoto = get_field("reference");
-	$cat = get_the_terms($post, "categorie");
-	$catname = $cat[0]->name;	
-?>
-
 <!-- Affichage photos apparentées -->
 <div class="col-photo">
 
