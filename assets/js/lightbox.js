@@ -2,10 +2,10 @@
 var lightbox = document.getElementById('myLightbox');
 
 // Activation du lightbox par l'image zoom
-var zoomLighbox = document.querySelector('.lightbox-open');
+var zoomLightbox = document.querySelector('.lightbox-open');
 
 // Ouverture de la lighbox au clic sur l'image zoom
-zoomLighbox.onclick = function() {
+zoomLightbox.onclick = function() {
     lightbox.style.display = "block";
 }
 
