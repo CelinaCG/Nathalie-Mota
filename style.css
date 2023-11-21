@@ -383,6 +383,7 @@ header {
     position: absolute;
     bottom: 10px;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 .hover-photo .lightbox-hover {
