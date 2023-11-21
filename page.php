@@ -13,7 +13,11 @@
 
     
     	<?php 
-		the_content(); 
+
+		// Gallerie
+		
+		get_template_part('template-parts/home' , 'gallery');
+
 		?>
 	
 		<!-- Section filtres pour page d'acceuil -->
