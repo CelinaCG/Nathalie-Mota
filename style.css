@@ -339,6 +339,8 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    margin: 0 auto;
+    max-width: 1148px;
 }
 
 .col-photo img {
