@@ -31,7 +31,7 @@
             echo '<div class="hover-photo">';
             the_post_thumbnail(); 
             echo '<div class="lightbox-hover">';
-            // Récupération de l'image + référence
+            // Récupération de l'image + référence + catégorie
             echo '<img class="zoom lightbox-open" data-category='. $catname .' data-reference='. $refPhoto .' data-image='. get_the_post_thumbnail_url() .'  src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
             echo '<a href="<?php the_permalink(); ?>"><img class="oeil" src="' . get_template_directory_uri() . '/assets/images/Icon_eye.png" ></a>';
             echo '<div class="legend-align">';
