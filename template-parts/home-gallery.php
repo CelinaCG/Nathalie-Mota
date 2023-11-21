@@ -1,22 +1,11 @@
-<!-- Affichage photos apparentées -->
+<!-- Affichage galerie photos -->
 <div class="col-photo">
 
     <?php 
         $current_category = get_the_terms(get_the_ID(), 'categorie');
         $the_query = new WP_Query(array(
             'post_type' => 'photos',
-            'posts_per_page' => -1,
-            'orderby' => 'rand',
-            'tax_query' => array(
-                array(
-                    // Prendre les images de la taxonomie de "catégorie"
-                    'taxonomy' => 'categorie',
-                    // Prendre l'ID de la photo affichée sur le single.php
-                    // 'field' => 'term_id',
-                    // Utiliser la catégorie actuelle
-                    'terms' => $current_category[0]->term_id,
-                ),
-            ),
+            'posts_per_page' => 12,
         ));
 
         if($the_query->have_posts()):
@@ -31,11 +20,11 @@
             echo '<div class="hover-photo">';
             the_post_thumbnail(); 
             echo '<div class="lightbox-hover">';
-            // Récupération de l'image + référence + catégorie
+            // Récupération de l'image + titre + catégorie
             echo '<img class="zoom lightbox-open" data-category='. $catname .' data-reference='. $refPhoto .' data-image='. get_the_post_thumbnail_url() .'  src="' . get_template_directory_uri() . '/assets/images/Icon_fullscreen.png" >';
             echo '<a href="<?php the_permalink(); ?>"><img class="oeil" src="' . get_template_directory_uri() . '/assets/images/Icon_eye.png" ></a>';
             echo '<div class="legend-align">';
-            echo '<div class="legend ref-photo">' . $refPhoto . '</div>';
+            echo '<div class="legend ref-photo">' . get_the_title() . '</div>';
             echo '<div class="legend cat">' . $catname . '</div>';
             echo '</div>';
             echo '</div>';
