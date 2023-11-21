@@ -1,46 +1,35 @@
 // Ajax
 
-// document.addEventListener('DOMContentLoaded', function() {
-// 	document.querySelector('#ajax_call').addEventListener('click', function() {
-// 		let formData = new FormData();
-// 		formData.append('action', 'request_mariage');
-   
-   
-// 		fetch(script_js.ajax_url, {
-// 			method: 'POST',
-// 			body: formData,
-// 		}).then(function(response) {
-// 			if (!response.ok) {
-// 			throw new Error('Network response error.');
-// 		}
-   
-	
-// 		return response.json();
-// 		}).then(function(data) {
-// 			data.posts.forEach(function(post) {
-// 			document.querySelector('#ajax_return').insertAdjacentHTML('beforeend', '<div class="col-12 mb-5">' + post.post_title + '</div>');
-// 		});
-// 		}).catch(function(error) {
-// 			console.error('There was a problem with the fetch operation: ', error);
-// 		});
-// 	});
-// });
+const ajaxFilter = document.getElementById( 'ajax-filter' )
+const siteContent = document.getElementById( 'site-content' )
 
-$('.cat-list_item').on('click', function() {
-	$('.cat-list_item').removeClass('active');
-	$(this).addClass('active');
-  
-	$.ajax({
-		type: 'POST',
-		url: '/wp-admin/admin-ajax.php',
-		dataType: 'html',
-		data: {
-		action: 'filter_photos',
-		category: $(this).data('slug'),
-	  	},
-	  	success: function(res) {
-		$('.photo-tiles').html(res);
+ajaxFilter.querySelector( 'select' ).addEventListener( 'change', event => {
+	
+	// .is-loading{ opacity: 0.5 } creates that opacity-like effect
+	siteContent.classList.add( 'is-loading' )
+	
+	fetch( ajaxurl + '?action=ajaxfilter', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify( { 
+			'cat' : event.target.value 
+		} ),
+	}).then( response => {
+		return response.text()
+	}).then( response => {
+
+		if( response ) {
+			siteContent.innerHTML = response;
 		}
+		siteContent.classList.remove( 'is-loading' )
+		// console.log( response );
+
+	}).catch( error => {
+		console.log( error )
 	})
-});
+
+} )
+
 
