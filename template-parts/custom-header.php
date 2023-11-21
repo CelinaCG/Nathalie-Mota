@@ -1,6 +1,6 @@
 <!-- Bloc d'affichage d'une photo de la liste pour page accueil -->
 
-<section>
+<div class="banner-style">
     <?php 
     $the_query = new WP_Query(array( 
         'orderby' => 'rand',
@@ -14,7 +14,9 @@
     
     while ($the_query -> have_posts()) {
         $the_query -> the_post();
+        echo '<div class="banner-img">';
         the_post_thumbnail(); 
+        echo '</div>';
     } 
 
     // Restore original Post Data.
@@ -26,4 +28,4 @@
         
         
 
-</section>
+</div>
