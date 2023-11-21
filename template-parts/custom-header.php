@@ -14,14 +14,13 @@
     
     while ($the_query -> have_posts()) {
         $the_query -> the_post();
-        echo '<div class="banner-img">';
         the_post_thumbnail(); 
-        echo '</div>';
     } 
 
     // Restore original Post Data.
     wp_reset_postdata();
     ?>
+    <h1 class="title"><?php the_title(); ?></h1>
     <?php else : ?>
 	<p><?php esc_html_e( 'Désolé, il n\'y a aucun post qui correspond à vos critères.' ); ?></p>
     <?php endif; ?>
