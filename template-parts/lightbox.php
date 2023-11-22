@@ -1,9 +1,10 @@
 <!-- Variables de stockage -->
 <?php
-	$refPhoto = get_field("reference");
-	$cat = get_the_terms($post, "categorie");
-	$catname = $cat[0]->name;	
+	$refPic = get_field("reference");
+	$catego = get_the_terms($post, "categorie");
+	$categoname = $catego[0]->name;	
 ?>
+
 <!-- Lightbox -->
 <div id="myLightbox" class="lightbox-overlay">
     
@@ -22,8 +23,8 @@
             <p>Suivante<img class="flechedroite-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-right.png' ?>">
             <img class="flechedroite-overlay-active"  src="<?php echo get_template_directory_uri() . '/assets/images/long-arrow-right.png' ?>"></p>
         </div>
-        <p class="legend">RÉFÉRENCE : <?php echo $refPhoto ?></p>
-        <p class="legend">CATÉGORIE : <?php echo $catname ?></p>
+        <p class="legend">RÉFÉRENCE : <?php echo $refPic ?></p>
+        <p class="legend">CATÉGORIE : <?php echo $categoname ?></p>
         
         
     </div>
