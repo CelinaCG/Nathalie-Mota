@@ -62,32 +62,16 @@
 		</div>
 
 		<!-- Tri par date -->
-		
+
 		<div class="ajax-filters">
 			<form id="ajax-filter">
-				<?php
-					$categories = get_terms(
-						array(
-							// 'taxonomy' => 'format',
-							// 'orderby' => 'rand',
-							'meta_key' => 'publish_date',
-							'orderby' => 'meta_value_num',
-						) 
-					);
-					if( $categories ) :
-						?>
-							<select>
-								<option value="">Trier par</option>
-								<?php
-									foreach ( $categories as $category ) :
-										?><option value="<?php echo $category->term_id ?>"><?php echo $category->name ?></option><?php
-									endforeach;
-								?>
-							</select>
-						<?php
-					endif;
-				?>
 				
+				<select>
+					<option value="">Trier par</option>
+					<option>Les plus anciennes au plus récentes</option>
+					<option>Les plus recentes au plus anciennes</option>
+				
+				</select>
 			</form>
 		</div>
     
@@ -98,16 +82,7 @@
 		get_template_part('template-parts/home' , 'gallery');
 
 		?>
-	
 
-		
-	
-
-	
-	
-	
-
- 
 	</section>
 
 
