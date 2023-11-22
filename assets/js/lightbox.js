@@ -2,12 +2,23 @@
 var lightbox = document.getElementById('myLightbox');
 
 // Activation du lightbox par l'image zoom
-var zoomLightbox = document.querySelector('.lightbox-open');
+var zoomLightbox = document.querySelectorAll('.lightbox-open');
+// foreach
+zoomLightbox.forEach(function(element) {
+    element.addEventListener('click', function() {
+        // Prendre l'élément du lightbox
+        var lightbox = document.getElementById('myLightbox');
+        // Rendre cet élément actif
+        lightbox.classList.add('active');
+    })
+}
+);
+
 
 // Ouverture de la lighbox au clic sur l'image zoom
-zoomLightbox.onclick = function() {
-    lightbox.style.display = "block";
-}
+// zoomLightbox.onclick = function() {
+//     lightbox.style.display = "block";
+// }
 
 // Fermeture de la modale au clic sur la croix
 window.onclick = function(event) {
