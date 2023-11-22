@@ -558,8 +558,9 @@ header {
     .site__header {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         height: 80px;
+        gap: 50px;
     }
 
     .burger {
@@ -603,6 +604,66 @@ header {
 
     .title {
         font-size: 27.59px;
+    }
+
+    /* Single */
+
+    .section-single {
+        width: 375px;
+    }
+
+    .detail-photo {
+        flex-direction: column-reverse;
+    }
+
+    .affichage-photo {
+        flex-wrap: wrap;
+        align-self: center;
+        width: 256px;
+    }
+
+    .bordure-description {
+        align-self: center;
+        width: 33vh;
+        margin: 0;
+        border-bottom: none;
+    }
+
+    h2 {
+        font-size: 46px;
+        line-height: 48px;
+        margin: 2vh 0;
+    }
+
+    .description-photo {
+        font-size: 14px;
+        line-height: 20.73px;
+        margin: 0 0 2vh;
+    }
+
+    .contact-carrousel {
+        border-top: #000000 solid 1px;
+        border-bottom: #000000 solid 1px;;
+    }
+
+    .carrousel{display:none;}
+
+    /* .contact-photo {} */
+
+    .btn-contact{display: block;}
+
+    .col-photo {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        height:auto;
+    }
+
+    .center-btn {display:none;}
+
+    h3 {
+        display: flex;
+        justify-content: center;
     }
 
     /* Footer */
