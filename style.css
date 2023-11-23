@@ -510,6 +510,7 @@ header {
     -webkit-text-stroke: 2px white;
     padding: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* Filtres */
@@ -660,9 +661,8 @@ option:nth-child(5):hover{
     .container {width: 100vw;}
 
     .title {
-        font-size: 27.59px;
-        line-height: 6vh;
-        margin: auto;
+        font-size: 8vh;
+        width: 80vw;
     }
 
     .banner-style {
@@ -763,14 +763,13 @@ option:nth-child(5):hover{
     }
 
     .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
         width: auto;
     }
 
     .modal-content img {
         margin-top: 15px;
         height: 9vh;
+        width: 100vw;
     }
 
     .suggestions {}
