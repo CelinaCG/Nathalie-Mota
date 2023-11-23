@@ -659,9 +659,44 @@ option:nth-child(5):hover{
 
     /* Accueil */
 
+    .container {width: 600px;}
+
     .title {
         font-size: 27.59px;
+        line-height: 6vh;
+        margin: auto;
     }
+
+    .banner-style {
+        width: 100%;
+        height: 42vh;
+    }
+
+    .filters-gallery {width: 600px;}
+
+    .main-filters{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ajax-filters {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ajax-filter {
+        margin: 1vh;
+        padding: 1vh;
+    }
+
+    .col-photo {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        height:auto;
+    }
+
 
     /* Single */
 
@@ -709,12 +744,6 @@ option:nth-child(5):hover{
 
     .btn-contact{display: block;}
 
-    .col-photo {
-        display: flex;
-        flex-direction: column;
-        width: 80vw;
-        height:auto;
-    }
 
     .center-btn {display:none;}
 
