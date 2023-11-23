@@ -51,6 +51,28 @@ register_nav_menus( array(
     )
 );
 
+// Ajout lien personnalisé de contact dans le menu header
+
+function add_custom_link_to_admin_menu() {
+	// Add a new top-level menu item
+	add_menu_page(
+	  'Contact', // menu title
+	  'contact', // menu slug
+	  'manage_options',
+	  'my-custom-link',
+	  'my_custom_link_callback', // callback function
+	//   '5.0' // menu icon
+	);
+  }
+  add_action('admin_menu', 'add_custom_link_to_admin_menu');
+
+function my_custom_link_callback() {
+// Render the custom link HTML
+$template_part = get_template_part('template-parts/modale', '');
+
+echo '<a href="' . esc_url($template_part) .'">Contact</a>';
+}
+
 // Ajax
 
 
