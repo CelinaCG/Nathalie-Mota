@@ -70,7 +70,7 @@ function my_custom_link_callback() {
 // Render the custom link HTML
 $template_part = get_template_part('template-parts/modale', '');
 
-echo '<a href="' . esc_url($template_part) .'">Contact</a>';
+echo '<a id="contact" href="' . esc_url($template_part) .'">Contact</a>';
 }
 
 // Ajax
