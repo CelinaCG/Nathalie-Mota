@@ -723,6 +723,19 @@ option:nth-child(5):hover{
         justify-content: center;
     }
 
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        width: auto;
+        /* height: 770px; */
+    }
+
+    .modal-content img {
+        margin-top: 15px;
+        height: 9vh;
+    }
+    
+
     /* Footer */
 
     .site__footer {
