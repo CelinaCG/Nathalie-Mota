@@ -610,8 +610,6 @@ option:nth-child(5):hover{
     /* Header */
     .site__header__menu {display:none;}
 
-    .contact {display:none;}
-
     .site__header {
         display: flex;
         align-items: center;
@@ -693,7 +691,7 @@ option:nth-child(5):hover{
     .col-photo {
         display: flex;
         flex-direction: column;
-        width: 95vw;
+        width: 90vw;
         height: auto;
         margin: 2vh 0;
     }
@@ -713,12 +711,12 @@ option:nth-child(5):hover{
     .affichage-photo {
         flex-wrap: wrap;
         align-self: center;
-        width: 80vw;
+        width: 70vw;
     }
 
     .bordure-description {
         align-self: center;
-        width: 36vh;
+        width: 70vw;
         border-bottom: none;
     }
 
@@ -737,15 +735,25 @@ option:nth-child(5):hover{
     .contact-carrousel {
         border-top: #000000 solid 1px;
         border-bottom: #000000 solid 1px;
-        width: 100vw;
+        flex-direction: column;
     }
 
     .carrousel{display:none;}
 
-    /* .contact-photo {} */
+    .contact-photo {
+        flex-direction: column;
+        margin: auto;
+        align-items: normal;
+        width: 70vw;
+    }
 
-    .btn-contact{display: block;}
+    .btn-contact{
+        width: 70vw;
+        padding: 0;
+        margin: 0;
+    }
 
+    .poppins {margin: 0 0 15px 0;}
 
     .center-btn {display:none;}
 
@@ -764,7 +772,8 @@ option:nth-child(5):hover{
         margin-top: 15px;
         height: 9vh;
     }
-    
+
+    .suggestions {}
 
     /* Footer */
 
