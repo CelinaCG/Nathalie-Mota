@@ -77,7 +77,7 @@
 			</div>
 		</section>
 	</div>
-	<div class="suggestions">
+	<div>
 		<h3>Vous aimerez aussi</h3>
 
 		<!-- Boucle photos apparentées -->
