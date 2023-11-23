@@ -441,37 +441,60 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
+    overflow: auto;
 }
 
 .zoom-image {
-    display: block;
-    width: 100%;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    align-items: center;
 }
 
-
+.zoom-image img{
+    max-width: 50%;
+    height: auto;
+}
 /* Flèches */
+
+.fleches {color:#FFFFFF;}
+
+.fleches:hover{opacity: 1;}
+
+.fleches img{color:#FFFFFF;}
+
+.previous-lightbox, .next-lightbox{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.previous-lightbox {left:20px;}
+
+.next-lightbox {right:20px;}
 
 .flechegauche-overlay-active {display:none;}
 .flechedroite-overlay-active {display:none;}
 
-/* Exemple à effacer si pas utile */
-/* .lightbox {
-    display: none; /* cachée par défaut */
-    /* position: fixed; fixée et qui prend tout l'écran */
-    /* z-index: 1000; Pour être sûr de passer au dessus du reste */
-    /* top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; */
-    /* background-color: rgba(0,0,0,.7); noire avec transparence */
-    /* background-size: contain; l'image occupe tout l'espace disponible */
-    /* background-repeat: no-repeat;  */
-    /* background-position: center; */
-    /* cursor: pointer; Le curseur a la même forme que sur un lien */
-/* } */
+.exit-lightbox {
+    position: fixed;
+    top: 60px;
+    right: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.legend-lb-align {
+    display: flex;
+    justify-content: space-around;
+}
 
 /* Accueil */
 
