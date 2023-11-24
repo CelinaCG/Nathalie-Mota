@@ -43,7 +43,7 @@
 
                 <!-- Flèche droite -->
                 <?php if(get_next_post()): ?>
-                    <a href="<?php get_the_post_thumbnail_url($nextLightbox) ?>">
+                    <a href="<?php echo get_the_post_thumbnail_url($nextLightbox) ?>">
                         <p class="next-lightbox">Suivante<img class="flechedroite-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-right.png' ?>">
                        </p>
                     </a>
