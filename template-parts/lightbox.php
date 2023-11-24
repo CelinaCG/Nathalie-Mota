@@ -7,31 +7,60 @@
 
 <!-- Lightbox -->
 <div id="myLightbox" class="lightbox-overlay">
-    
-    <!-- Contenu lightbox -->
-    <div class="lightbox-content">
-        <div class="zoom-image">
-        <img src="<?php echo get_the_post_thumbnail_url(); ?>">
-        </div>
-        <img class="exit-lightbox" src="<?php echo get_template_directory_uri() . '/assets/images/white-cross.png' ?>">
-        <div class="fleches">
-            <!-- Flèche gauche -->
-            <p class="previous-lightbox">Précédente<img class="flechegauche-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-left.png' ?>">
-            <img class="flechegauche-overlay-active" src="<?php echo get_template_directory_uri() . '/assets/images/long-arrow-left.png' ?>"></p>
+    <!-- Mise en place des posts précédents et suivants -->
+    <?php 
+        $previousLightbox = get_previous_post();
+        $nextLightbox = get_next_post();
+    ?>
+    <!-- Mise en place des liens des images précédentes et suivantes -->
+    <?php if(get_previous_post()){?>
+        <img class="" src="<?php echo get_the_post_thumbnail_url($previousLightbox) ?>" alt="photo précédente">
+        <img class="" src="<?php echo get_the_post_thumbnail_url($nextLightbox) ?>" alt="photo suivante">			
 
-            <!-- Flèche droite -->
-            <p class="next-lightbox">Suivante<img class="flechedroite-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-right.png' ?>">
-            <img class="flechedroite-overlay-active"  src="<?php echo get_template_directory_uri() . '/assets/images/long-arrow-right.png' ?>"></p>
-        </div>
-        <div class="legend-lb-align">
-            <div>
-                <p class="legend">RÉFÉRENCE : <?php echo $refPic ?></p>
+    <?php }
+    elseif(get_next_post() ) {?>
+        <img class="zoom-image" src="<?php echo get_the_post_thumbnail_url($nextLightbox) ?>" alt="photo suivante">
+        <img class="zoom-image" src="<?php echo get_the_post_thumbnail_url($previousLightbox) ?>" alt="photo précédente">			
+    <?php }?>
+
+    <!-- Contenu lightbox. Le lien de la photo précédente ou suivante doit être cliquable via les flèches -->
+    <div>
+        <div class="lightbox-content">
+            <div class="zoom-image">
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>">
             </div>
-            <div>
-            <p class="legend">CATÉGORIE : <?php echo $categoname ?></p>
-            </div>       
+            <img class="exit-lightbox" src="<?php echo get_template_directory_uri() . '/assets/images/white-cross.png' ?>">
+            <div class="fleches">
+
+                <?php if(get_previous_post()): ?>
+                    <a href="<?php echo get_the_post_thumbnail_url($previousLightbox) ?>">
+
+                        <!-- Flèche gauche -->
+                        <p class="previous-lightbox">Précédente<img class="flechegauche-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-left.png' ?>">
+                        </p>
+                    </a>
+                <?php endif; ?>
+
+                <!-- Flèche droite -->
+                <?php if(get_next_post()): ?>
+                    <a href="<?php get_the_post_thumbnail_url($nextLightbox) ?>">
+                        <p class="next-lightbox">Suivante<img class="flechedroite-overlay-inactive" src="<?php echo get_template_directory_uri() . '/assets/images/short-arrow-right.png' ?>">
+                       </p>
+                    </a>
+                <?php endif; ?>
+            </div>
+            <div class="legend-lb-align">
+                <div>
+                    <p class="legend"> <?php echo $refPic ?></p>
+                </div>
+                <div>
+                    <p class="legend"> <?php echo $categoname ?></p>
+                </div>       
       
+            </div>
         </div>
+   
+  
        
         
         
