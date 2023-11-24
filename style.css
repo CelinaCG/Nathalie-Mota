@@ -707,6 +707,7 @@ option:nth-child(5):hover{
     .ajax-filters {
         display: flex;
         flex-direction: column;
+        gap: 0;
     }
 
     #ajax-filter {
