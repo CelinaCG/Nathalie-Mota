@@ -457,19 +457,18 @@ header {
     justify-content: center;
     margin: 20px auto;
     align-items: center;
+    height: 495px;
+    width: 564px;
 }
 
-.zoom-image img{
-    max-width: 50%;
+.lightbox-content .zoom-image img{
+    object-fit: fill;
+    width: 100%;
     height: auto;
 }
 /* Flèches */
 
-.fleches {color:#FFFFFF;}
-
-.fleches:hover{opacity: 1;}
-
-.fleches img{color:#FFFFFF;}
+.fleches p {color:#FFFFFF;}
 
 .previous-lightbox, .next-lightbox{
     position: absolute;
@@ -479,14 +478,22 @@ header {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 }
 
-.previous-lightbox {left:20px;}
+.previous-lightbox {
+    left: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
 
-.next-lightbox {right:20px;}
-
-.flechegauche-overlay-active {display:none;}
-.flechedroite-overlay-active {display:none;}
+.next-lightbox {
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
 
 .exit-lightbox {
     position: fixed;
