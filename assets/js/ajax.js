@@ -32,4 +32,16 @@ ajaxFilter.querySelector( 'select' ).addEventListener( 'change', event => {
 
 } )
 
+// Essai 2
+
+var taxonomies = wp_get_available_taxonomies();
+var selectElement = document.querySelector('select#my-filter');
+
+
+// Add an event listener to the change event
+selectElement.addEventListener('change', function() {
+	var selectedTaxonomy = selectElement.value;
+	// Your filter logic goes here
+  });
+
 
