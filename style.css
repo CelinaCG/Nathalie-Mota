@@ -191,6 +191,7 @@ header {
     justify-content: center;
     background-color: #D8D8D8;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .wpcf7-submit{
@@ -542,6 +543,7 @@ header {
     width: 1148px;
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .main-filters {
@@ -551,11 +553,12 @@ header {
 
 .ajax-filters {
     display: flex;
+    gap: 30px;
 }
   
 #ajax-filter {
     margin: 20px 0;
-    padding: 20px;
+    padding: 20px 0;
 }
   
 select {
