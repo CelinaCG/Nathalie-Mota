@@ -1,47 +1,81 @@
 // Ajax
 
-const ajaxFilter = document.getElementById( 'ajax-filter' )
-const siteContent = document.getElementById( 'site-content' )
+// Chargement de la pagination
 
-ajaxFilter.querySelector( 'select' ).addEventListener( 'change', event => {
-	
-	// .is-loading{ opacity: 0.5 } creates that opacity-like effect
-	siteContent.classList.add( 'is-loading' )
-	
-	fetch( ajaxurl + '?action=ajaxfilter', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify( { 
-			'cat' : event.target.value 
-		} ),
-	}).then( response => {
-		return response.text()
-	}).then( response => {
+// garder en mémoire la 1ère page
+let currentPage = 1;
+// Fonction de chargement des pages
+function ChargerPosts() {
+	// +1 car chargement de la page suivante qui est incrémentée à la page actuelle 
+	currentPage++; 
 
-		if( response ) {
-			siteContent.innerHTML = response;
-		}
-		siteContent.classList.remove( 'is-loading' )
-		// console.log( response );
+	$.ajax({
+		type:'POST',
+		url: '/wp-admin/admin-ajax.php',
+		dataType: 'html',
+		data: {
+		action: 'gallery_load_more',
+		paged: currentPage,
+		category: $('#catFilter').val(),
+		post_format: $('#formFilter').val(),
+		post_ordre: $('#triFilter').val(),
+	},
+	success: function (res) {
+		// Extraction des images par filtre
+		const imageFilter = $(res).filter('.hover-photo');
+		// Ajout contenu à la liste de images
+		// classe à mettre dans 'functions'
+		$('.albumPhoto').append(res);
+		// MAJ liste d'images avec nouvelles images ajoutées précédement
+		images = $('.albumPhoto .hover-photo');
+		// MAJ lightbox pour ajout nouvelles images
+		openLightbox();
+		// MAJ filtres suite ajout nouveau contenu
+		applyFilters();
+	  	}
+	});
+}
 
-	}).catch( error => {
-		console.log( error )
-	})
+// Gestion du clic sur le bouton "Load More"
+$('#load-more').on('click', loadMorePosts);
 
-} )
-
-// Essai 2
-
-var taxonomies = wp_get_available_taxonomies();
-var selectElement = document.querySelector('select#my-filter');
-
-
-// Add an event listener to the change event
-selectElement.addEventListener('change', function() {
-	var selectedTaxonomy = selectElement.value;
-	// Your filter logic goes here
+// Fonction de chargement du contenu en utilisant AJAX avec des filtres
+function loadContent(page, category, postFormat, postOrder) {
+  // Effectuer une requête AJAX pour avoir le contenu filtré
+  $.ajax({
+    type: 'POST',
+    url: 'wp-admin/admin-ajax.php',
+    dataType: 'html',
+    data: {
+      action: 'gallery_load_more',
+      paged: page,
+      category: category,
+      post_format: postFormat,
+      post_ordre: postOrder,
+    },
+    success: function (res) {
+      // Filtrer le nouveau contenu pour extraire les images
+      const imageFilter = $(res).filter('.hover-photo');
+      // Remplacer le contenu de .photos-acc par la réponse AJAX
+      $('.albumPhoto').html(res);
+      // Réinitialiser la liste d'images avec les nouvelles images ajoutées
+      images = $('.albumPhoto .hover-photo');
+    }
   });
+}
+
+// Fonction pour appliquer les filtres
+function applyFilters() {
+  // Réinitialisation de la page actuelle lorsque les filtres changent
+  currentPage = 1;
+  // Chargement du contenu avec les filtres actuels
+  loadContent(currentPage, $('#catFilter').val(), $('#formFilter').val(), $('#triFilter').val());
+}
+// Géstion des changements dans les sélecteurs de filtre
+$('#categFilter, #formFilter, #triFilter').on('change', applyFilters);
+
+ 
+ 
+
 
 
