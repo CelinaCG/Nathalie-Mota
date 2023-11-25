@@ -1,5 +1,4 @@
 // Ajax
-
 // Chargement de la pagination
 
 // garder en mémoire la 1ère page
