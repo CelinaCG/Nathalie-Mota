@@ -450,6 +450,7 @@ header {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     overflow: auto;
+    /* display:none; */
 }
 
 .zoom-image {
@@ -608,6 +609,11 @@ option:nth-child(4):hover{
 }
 option:nth-child(5):hover{
     background: #E00000;
+}
+
+.charge-more a {
+    text-decoration: none;
+    color:#000000;
 }
 
 /* Footer */
