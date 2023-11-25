@@ -25,8 +25,10 @@
                 <img class="menu_burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/burger.png' ?>">
                 <img class="croix_burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/cross.png' ?>">
             </div>
-            <?php get_template_part('template-parts/menu', ''); ?>
         </nav>
+        <?php 
+        // get_template_part('template-parts/menu', '');
+         ?>
     </header>
     
     <?php wp_body_open(); ?>
