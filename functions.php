@@ -113,7 +113,7 @@ function filtre() {
 				<?php the_content(); ?>
 				<div class="lightbox-hover">
 					<a href="#">
-						<img class="zoom lightbox-open" data-category="<?php echo strip_tags(get_the_term_list(get_the_ID(), 'categorie')); ?>" data-reference="<?php echo get_field('reference', get_the_ID()); ?>" data-image="<?php echo get_the_post_thumbnail_url(); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_fullscreen.png" alt="full_screen">
+						<img class="p-ecran zoom lightbox-open zoom-image" data-category="<?php echo strip_tags(get_the_term_list(get_the_ID(), 'categorie')); ?>" data-reference="<?php echo get_field('reference', get_the_ID()); ?>" data-image="<?php echo get_the_post_thumbnail_url(); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_fullscreen.png" alt="full_screen">
 					</a> <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
 						<img class="oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_eye.png" alt="eye">
 					</a>
