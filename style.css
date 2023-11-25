@@ -663,7 +663,7 @@ option:nth-child(5):hover{
     }
     .sidenav-burger{
         height: 100%;
-        width: 1440px;
+        width: 100%;
         position: fixed;
         z-index: 1000;
         top: 126px;
