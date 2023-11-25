@@ -1,8 +1,8 @@
 <!-- Variables de stockage -->
 <?php
-	$refPic = get_field("reference");
-	$catego = get_the_terms($post, "categorie");
-	$categoname = $catego[0]->name;	
+	// $refPic = get_field("reference");
+	// $catego = get_the_terms($post, "categorie");
+	// $categoname = $catego[0]->name;	
 ?>
 
 <!-- Lightbox -->
@@ -51,10 +51,10 @@
             </div>
             <div class="legend-lb-align">
                 <div>
-                    <p class="legend"> <?php echo $refPic ?></p>
+                    <p class="legend"> <?php echo get_field("reference") ?></p>
                 </div>
                 <div>
-                    <p class="legend"> <?php echo $categoname ?></p>
+                    <p class="legend"> <?php echo get_term(get_the_ID(), "categorie")->name; ?></p>
                 </div>       
       
             </div>
@@ -66,4 +66,48 @@
         
     </div>
 
+</div>
+
+<!-- ..................................... -->
+<!-- Essai lightbox -->
+
+<!-- <div id="custom-lightbox"> -->
+    <!-- <span class="close-lightbox">&times;</span> -->
+    <!-- <img class="exit-lightbox" src=" -->
+    <?php 
+    // echo get_template_directory_uri() . '/assets/images/white-cross.png' 
+    ?>
+    <!-- "> -->
+    <!-- <div class="lightbox-content">
+        <img src="" alt="image en lightbox" id="lightbox-image">
+
+        <div class="legend-lb-align"> -->
+            <!-- <div class="legend"> -->
+                <?php 
+                // echo get_field('reference', get_the_ID()); 
+                ?>
+                <!-- </div> -->
+            <!-- <div class="legend"> -->
+                <?php 
+                // echo strip_tags(get_the_term_list(get_the_ID(), 'categorie')); 
+                ?>
+                <!-- </div> -->
+
+        </div>
+    </div>
+    <!-- <div class="navigation">
+        <span class="prev_span previous-lightbox">Précédente<img class="prev flechegauche-overlay-inactive" src="<?php 
+        // echo get_template_directory_uri(); 
+        ?>/assets/images/short-arrow-left.png">  -->
+            
+        <!-- </span> -->
+        <!-- <span class="next_span next-lightbox">
+            Suivante
+            <img class="next flechedroite-overlay-inactive" src=" -->
+            <?php 
+            // echo get_template_directory_uri(); 
+            ?>
+            <!-- /assets/images/short-arrow-right.png">
+        </span> -->
+    </div>
 </div>
