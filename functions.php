@@ -75,57 +75,98 @@ echo '<a id="contact" href="' . esc_url($template_part) .'">Contact</a>';
 
 // Ajax
 
-add_action( 'wp_ajax_ajaxfilter', 'rudr_ajax_filter_by_category' );
-add_action( 'wp_ajax_nopriv_ajaxfilter', 'rudr_ajax_filter_by_category' );
+// Filtre Pagination
 
-function rudr_ajax_filter_by_category() {
-
-	$args = json_decode( file_get_contents( "php://input" ), true );
-
-	query_posts( $args );
-	
-	// below is almost unchanged part from Twenty Twenty theme index.php file
-	$i = 0;
-
-	while( have_posts() ) {
-		++$i;
-		if ( $i > 1 ) {
-			echo '<hr class="post-separator styled-separator is-style-wide" />';
-		}
-		the_post();
-
-		get_template_part( 'template-parts/content', get_post_type() );
-
-	}
-
-	die;
-
-}
-
-// Pagination
-
-function gallery_load_more() {
-	// Boucle
-	$ajaxposts = new WP_Query([
+function filtre() {
+	// Boucle de requète pour filtrer éléments en fonction des paramètres POST
+	$filtre = new WP_Query([
 	  'post_type' => 'photos',
-	  'posts_per_page' => 8,
+	  'posts_per_page' => 12,
 	  'orderby' => 'date',
-	  'order' => 'DESC',
+	  'order' => $_POST['post_ordre'],
 	  'paged' => $_POST['paged'],
+	  'tax_query' => array(
+		$_POST['category'] != "all" ?
+			array(
+				'taxonomy' => 'categorie',
+				'field'    => 'slug',
+				'terms'    => $_POST['category'],
+			)
+			: '',
+		$_POST['post_format'] != "all" ?
+			array(
+				'taxonomy' => 'format',
+				'field'    => 'slug',
+				'terms'    => $_POST['post_format'],
+			)
+			: '',
+		)
 	]);
-  
-	$response = '';
-  
-	if($ajaxposts->have_posts()) {
-	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .= get_template_part('template-parts/home', 'gallery');
-	  endwhile;
-	} else {
-	  $response = '';
+		
+	if ($filtre->have_posts()) :
+		while ($filtre->have_posts()) :
+			$filtre->the_post();
+			$post = get_post();
+		
+	?>
+			<div class="hover-photo">
+				<?php the_content(); ?>
+				<div class="lightbox-hover">
+					<a href="#">
+						<img class="zoom lightbox-open" data-category="<?php echo strip_tags(get_the_term_list(get_the_ID(), 'categorie')); ?>" data-reference="<?php echo get_field('reference', get_the_ID()); ?>" data-image="<?php echo get_the_post_thumbnail_url(); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_fullscreen.png" alt="full_screen">
+					</a> <a href="<?php echo get_the_permalink(get_the_ID()); ?>">
+						<img class="oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/Icon_eye.png" alt="eye">
+					</a>
+					<div class="legend-align">
+						<div class="legend ref-photo"><?php echo get_field('reference', $post->ID); ?></div>
+						<div class="legend cat"><?php 
+						echo 
+						strip_tags(get_the_term_list($post->ID, 'categorie')); ?></div>
+					</div>
+				</div>
+			</div>
+		<?php endwhile; ?>
+	<?php endif;
+		wp_reset_postdata();
+		exit();
 	}
-  
-	echo $response;
-	exit;
-  }
-  add_action('wp_ajax_gallery_load_more', 'gallery_load_more');
-  add_action('wp_ajax_nopriv_gallery_load_more', 'gallery_load_more');
+	add_action('wp_ajax_filtre', 'filtre');
+	add_action('wp_ajax_nopriv_filtre', 'filtre');
+
+	
+/** Fonction pour afficher les options de catégorie pour le filtrage **/
+function filtreCategorie()
+{
+	if ($terms = get_terms(array(
+		'taxonomy' => 'categorie',
+		'field'    => 'slug',
+		'terms'    => $_POST['category'],
+	)))
+		foreach ($terms as $term) {
+			echo '<option  value="' . $term->slug . '">' . $term->name . '</option>';
+		}
+}
+/** Fonction pour afficher les options de format pour le filtrage **/
+function filtreFormat()
+{
+	if ($terms = get_terms(array(
+		'taxonomy' => 'format',
+		'field'    => 'slug',
+		'terms'    => $_POST['post_format'],
+	)))
+		foreach ($terms as $term) {
+			echo '<option  value="' . $term->slug . '">' . $term->name . '</option>';
+		}
+}
+/** Fonction pour afficher les options de tri pour le filtrage **/
+function filtreOrderDirection()
+{
+	if ($order_options = (array(
+		'DESC' => 'Les plus récents au plus anciens',
+		'ASC' => 'Les plus anciens au plus récents',
+	)))
+		foreach ($order_options as $value => $label) {
+			echo "<option " . selected($_POST['tri'], $value) . " value='$value'>$label</option>";
+		}
+}
+?>
