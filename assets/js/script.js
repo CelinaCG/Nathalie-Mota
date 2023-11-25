@@ -90,25 +90,4 @@ btnCon.addEventListener('click', function(){
 //     hover.style.display = "none";
 // });
 
-// Chargement de la pagination
-
-// garder en mémoire la 1ère page
-let currentPage = 1;
-$('#load-more').on('click', function() {
-    // +1 car chargement de la page suivante
-    currentPage++; 
-
-    $.ajax({
-        type:'POST',
-        url: '/wp-admin/admin-ajax.php',
-        dataType: 'html',
-        data: {
-        action: 'gallery_load_more',
-        paged: currentPage,
-    },
-    success: function (res) {
-      $('.publication-list').append(res);
-    }
-  });
-});
 
