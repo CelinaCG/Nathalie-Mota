@@ -5,8 +5,6 @@
 
 	<?php get_template_part('template-parts/custom' , 'header'); ?>
 
-
-
 	<!-- Section filtres pour page d'acceuil -->
 	<div class="filters-gallery">
 		<!-- Catégories -->
@@ -140,8 +138,8 @@
 						// echo filtreFormat();
 							?>
 					<!-- </select>
-				</form> -->
-			</div>
+				</form> 
+			</div> -->
 
 			<!-- Tri par date -->
 
@@ -244,7 +242,4 @@
 	
 </div>
 
-<!-- Anomalie -->
-<?php 
-// get_footer(); 
-?>	
+<?php get_footer(); ?>	
