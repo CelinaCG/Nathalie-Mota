@@ -440,7 +440,7 @@ header {
 /* Lightbox */
 
 #myLightbox {display: none;}
-
+/*
 .lightbox-content {
     position: fixed;
     top: 0;
@@ -450,8 +450,8 @@ header {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     overflow: auto;
-    /* display:none; */
-}
+    display:none;
+}*/
 
 .zoom-image {
     display: flex;
@@ -512,7 +512,9 @@ header {
 
 /* Accueil */
 
-.container {width: 1440px;}
+.container {
+    width: 1440px;
+}
 
 .banner-style {
     width: 100%;
@@ -592,23 +594,6 @@ option {
     color: #313144;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-option:nth-child(1):hover{
-    background: #E00000;
-}
-
-option:nth-child(2):hover{
-    background: #E00000;
-}
-option:nth-child(3):hover{
-    background: #E00000;
-}
-option:nth-child(4):hover{
-    background: #E00000;
-}
-option:nth-child(5):hover{
-    background: #E00000;
 }
 
 .charge-more a {
@@ -823,9 +808,9 @@ option:nth-child(5):hover{
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 208px;
     }
     .menu-footer-container{
-        margin-top: 100px;
         line-height: 36px;
     }
     .menu-footer-container ul {
