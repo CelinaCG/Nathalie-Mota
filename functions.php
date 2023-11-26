@@ -39,7 +39,7 @@ function ajout_CSS_script() {
     wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0');
     // Lightbox
     wp_enqueue_script('script-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), '1.0', true);
-
+	wp_enqueue_style('photoEvent-lightbox-style', get_template_directory_uri() . '/assets/css/lightbox.css');
 }
 add_action( 'wp_enqueue_scripts', 'ajout_CSS_script' );
 
