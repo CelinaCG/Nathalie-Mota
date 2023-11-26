@@ -723,7 +723,8 @@ option {
         flex-direction: column;
         width: 90vw;
         height: auto;
-        margin: 2vh 0;
+        margin: 2vh;
+        /* margin: 2vh 0; */
     }
 
 
