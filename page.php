@@ -49,30 +49,36 @@
 
 		<!-- Montrer 8 premières photos par défaut -->
 		<?php 
-		$publications = new WP_Query([
-		'post_type' => 'photos',
-		'posts_per_page' => 8,
-		'orderby' => 'date',
-		'order' => 'DESC',
-		'paged' => 1,
-		]);
+		// $publications = new WP_Query([
+		// 'post_type' => 'photos',
+		// 'posts_per_page' => 8,
+		// 'orderby' => 'date',
+		// 'order' => 'DESC',
+		// 'paged' => 1,
+		// ]);
 		?>
 		<!-- Boucle sur les résultats de la requète $publications -->
-		<?php if($publications->have_posts()): ?>
-		<ul class="publication-list">
+		<?php 
+		// if($publications->have_posts()): 
+		?>
+		<!-- <ul class="publication-list"> -->
 			<?php 
-			while ($publications->have_posts()): $publications->the_post();
-				get_template_part('parts/card', 'publication');
-			endwhile;
+			// while ($publications->have_posts()): $publications->the_post();
+			// 	get_template_part('parts/card', 'publication');
+			// endwhile;
 			?>
-		</ul>
-		<?php endif; ?>
-		<?php wp_reset_postdata(); ?>
+		<!-- </ul> -->
+		<?php 
+		// endif; 
+		?>
+		<?php 
+		// wp_reset_postdata(); 
+		?>
 
 		
 		<!-- Bouton "Charger plus" -->
 		<div class="center-btn charge-more">
-		<a href="#" class="btn-photos btn-contact" id="load-more">Charger plus</a>
+		<a href="#loadmore" class="btn-photos btn-contact" id="load-more">Charger plus</a>
 		</div>
 	</div>
 	
