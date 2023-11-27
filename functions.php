@@ -76,7 +76,7 @@ echo '<a id="contact" href="' . esc_url($template_part) .'">Contact</a>';
 
 // Ajax
 
-// Filtre Pagination
+// Filtre galerie
 
 function gallery_load_more() {
 	// Boucle de requète pour filtrer éléments en fonction des paramètres POST
@@ -107,9 +107,7 @@ function gallery_load_more() {
 	if ($filtre->have_posts()) :
 		while ($filtre->have_posts()) :
 			$filtre->the_post();
-			$post = get_post();
-		
-	?>
+			$post = get_post(); ?>
 			<div class="hover-photo">
 				<?php echo the_post_thumbnail(); ?>
 				<div class="lightbox-hover">
@@ -169,4 +167,34 @@ function filtreOrderDirection()
 			echo "<option " . selected($_POST['tri'], $value) . " value='$value'>$label</option>";
 		}
 }
+
+
+// Filtre pagination
+
+// Montrer 8 premières photos par défaut
+
+function page_load_more() {
+	$pagefiltre = new WP_Query([
+		'post_type' => 'photos',
+		'posts_per_page' => 8,
+		'orderby' => ['date' => 'DESC'],
+		'order' => 'DESC',
+	]);
+
+	$response = '';
+
+	if($pagefiltre->have_posts()) {
+		while($pagefiltre->have_posts()) : $pagefiltre->the_post();
+			$response .= get_template_part('template-parts/home' , 'gallery');
+		endwhile;
+	} else {
+		$response = '';
+	}
+
+	echo $response;
+	exit;
+}
+add_action('wp_ajax_page_load_more', 'page_load_more');
+add_action('wp_ajax_nopriv_page_load_more', 'page_load_more');
+
 ?>
