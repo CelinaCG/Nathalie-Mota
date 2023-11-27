@@ -27,7 +27,7 @@
             </div>
         </nav>
         <?php 
-        // get_template_part('template-parts/menu', '');
+        get_template_part('template-parts/menu', '');
          ?>
     </header>
     
