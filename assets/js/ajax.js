@@ -43,7 +43,6 @@ jQuery(document).ready(function($) {
 
 // Fonction de chargement du contenu en utilisant AJAX avec des filtres
 
-// Le reste de votre code
 jQuery(document).ready(function($) {
   function applyFilters() {
     // Réinitialisation de la page actuelle lorsque les filtres changent
@@ -55,7 +54,7 @@ jQuery(document).ready(function($) {
   // Gestion des changements dans les sélecteurs de filtre
   $('#catFilter, #formFilter, #triFilter').on('change', applyFilters);
   
-  // Définir la fonction loadContent
+  // loadContent pour charger le contenu
   function loadContent(page, category, postFormat, postOrder) {
     // Effectuer une requête AJAX pour avoir le contenu filtré
     jQuery.ajax({
