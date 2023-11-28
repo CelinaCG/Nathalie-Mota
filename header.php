@@ -26,9 +26,6 @@
                 <img class="croix_burger" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/cross.png' ?>">
             </div>
         </nav>
-        <?php 
-        get_template_part('template-parts/menu', '');
-         ?>
     </header>
     
     <?php wp_body_open(); ?>
