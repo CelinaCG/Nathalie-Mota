@@ -39,8 +39,8 @@ function ajout_CSS_script() {
     wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0');
     // Lightbox
     wp_enqueue_script('script-lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), '1.0', true);
-	wp_enqueue_style('photoEvent-lightbox-style', get_template_directory_uri() . '/assets/css/lightbox.css');
-	wp_enqueue_script('photoEvent-ajax', get_template_directory_uri() . '/assets/js/ajax.js', array(), '1.0', true);
+	wp_enqueue_style('lightbox-style', get_template_directory_uri() . '/assets/css/lightbox.css');
+	wp_enqueue_script('photo-ajax', get_template_directory_uri() . '/assets/js/ajax.js', array(), '1.0', true);
 }
 add_action( 'wp_enqueue_scripts', 'ajout_CSS_script' );
 
@@ -55,14 +55,13 @@ register_nav_menus( array(
 // Ajout lien personnalisé de contact dans le menu header
 
 function add_custom_link_to_admin_menu() {
-	// Add a new top-level menu item
+	// Ajout nouveau menu
 	add_menu_page(
-	  'Contact', // menu title
-	  'contact', // menu slug
+	  'Contact', // Titre
+	  'contact', // Slug
 	  'manage_options',
 	  'my-custom-link',
 	  'my_custom_link_callback', // callback function
-	//   '5.0' // menu icon
 	);
   }
   add_action('admin_menu', 'add_custom_link_to_admin_menu');
@@ -167,34 +166,5 @@ function filtreOrderDirection()
 			echo "<option " . selected($_POST['tri'], $value) . " value='$value'>$label</option>";
 		}
 }
-
-
-// Filtre pagination
-
-// Montrer 8 premières photos par défaut
-
-function page_load_more() {
-	$pagefiltre = new WP_Query([
-		'post_type' => 'photos',
-		'posts_per_page' => 8,
-		'orderby' => ['date' => 'DESC'],
-		'order' => 'DESC',
-	]);
-
-	$response = '';
-
-	if($pagefiltre->have_posts()) {
-		while($pagefiltre->have_posts()) : $pagefiltre->the_post();
-			$response .= get_template_part('template-parts/home' , 'gallery');
-		endwhile;
-	} else {
-		$response = '';
-	}
-
-	echo $response;
-	exit;
-}
-add_action('wp_ajax_page_load_more', 'page_load_more');
-add_action('wp_ajax_nopriv_page_load_more', 'page_load_more');
 
 ?>
