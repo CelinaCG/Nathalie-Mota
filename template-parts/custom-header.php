@@ -17,7 +17,7 @@
         the_post_thumbnail(); 
     } 
 
-    // Restore original Post Data.
+    // Restoration des données
     wp_reset_postdata();
     ?>
     <h1 class="title"><?php the_title(); ?></h1>
