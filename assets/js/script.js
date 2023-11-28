@@ -23,7 +23,7 @@ var openburger = document.querySelector('.menu_burger');
 var closeburger = document.querySelector('.croix_burger');
 
 openburger.addEventListener('click', function(){
-    document.querySelector('.m-burger').style.display="block";
+    document.querySelector('.site__header__menu').style.display="flex";
     // Disparition du menu burger
     document.querySelector('.menu_burger').style.display="none";
     // Apparition de la croix
@@ -31,7 +31,7 @@ openburger.addEventListener('click', function(){
 });
 
 closeburger.addEventListener('click', function(){
-    document.querySelector('.m-burger').style.display="none";
+    document.querySelector('.site__header__menu').style.display="none";
     document.querySelector('.croix_burger').style.display="none";
     document.querySelector('.menu_burger').style.display="block";
 });
@@ -71,23 +71,5 @@ var inputRef = document.querySelector('#reference');
 btnCon.addEventListener('click', function(){
     inputRef.setAttribute('value', refPhoto);
 });
-
-// // Hover photos apparentées
-
-// // Elément hover
-// var hover = document.getElementById('myHover');
-
-// // Lieu d'activation du hover
-// var photoHover = document.querySelector('.hover-photo');
-
-// // Activation du hover au survol de la photo
-// photoHover.addEventListener("mouseenter", function() {
-//     hover.style.display = "block";
-// });
-
-// // Désactivation du hover en sortant de la photo
-// photoHover.addEventListener("mouseleave", function() {
-//     hover.style.display = "none";
-// });
 
 
