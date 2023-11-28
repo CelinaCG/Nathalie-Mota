@@ -32,7 +32,7 @@
 	<div class="contact-carrousel">
 		<section class="contact-photo">
 		<p class="poppins">Cette photo vous intéresse ?</p>
-		<p class="contact btn-contact">Contact</p>
+		<p class=" hover-btn contact btn-contact">Contact</p>
 		</section>
 		<section class="carrousel">
 			<div>
@@ -85,7 +85,7 @@
 		<?php get_template_part('template-parts/photo' , 'block'); ?>
 		
 		<div class="center-btn ts-photos">
-			<p class="btn-photos btn-contact"><a href="<?php echo esc_url(home_url('/')); ?>">Toutes les photos</p>
+			<a class="hover-btn btn-photos btn-contact" href="<?php echo esc_url(home_url('/')); ?>">Toutes les photos</a>
 		</div>
 	
 
