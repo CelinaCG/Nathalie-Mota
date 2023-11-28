@@ -765,7 +765,7 @@ option {
 
     .detail-photo {
         flex-direction: column-reverse;
-        width: 90vw;
+        width: 100vw;
     }
 
     .affichage-photo {
