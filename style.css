@@ -747,7 +747,7 @@ option {
         margin: 2vh auto;
     }
 
-    /* .hover-photo {height:40vh;} */
+    .hover-photo {height:40vh;}
     
     .hover-photo img {height: 40vh;}
 
@@ -760,7 +760,7 @@ option {
     /* Single */
 
     .section-single {
-        width: 90vw;
+        width: 100vw;
     }
 
     .detail-photo {
