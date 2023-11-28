@@ -726,14 +726,12 @@ option {
 
     .main-filters{
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        overflow: scroll;
     }
 
     .ajax-filters {
         display: flex;
-        flex-direction: column;
-        gap: 0;
+    
     }
 
     #ajax-filter {
@@ -748,6 +746,10 @@ option {
         height: auto;
         margin: 2vh auto;
     }
+
+    /* .hover-photo {height:40vh;} */
+    
+    .hover-photo img {height: 40vh;}
 
     .center-btn {
         margin: 3vh auto;
