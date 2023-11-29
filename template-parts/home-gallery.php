@@ -1,5 +1,5 @@
 <!-- Affichage galerie photos -->
-<div class="col-photo">
+<div class="col-photo gallery-container">
 
     <?php 
         $the_query = new WP_Query(array(
