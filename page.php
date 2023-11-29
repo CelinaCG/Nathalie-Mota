@@ -8,7 +8,8 @@
 	<!-- Section filtres pour page d'acceuil -->
 	<div class="filters-gallery">
 		<!-- Catégories -->
-		<section class="main-filters">
+		<!-- <div> -->
+		<section class="main-filters main-filters-container">
 			<div class="ajax-filters">
 				<form id="ajax-filter">
 					<select name="cat" id="catFilter">
@@ -37,6 +38,7 @@
 				</form>
 			</div>
 		</section>
+		<!-- </div> -->
 		<?php 
 
 		// Gallerie
