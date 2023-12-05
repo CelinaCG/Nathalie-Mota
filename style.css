@@ -378,7 +378,7 @@ header {
 
 .hover-photo {
     position: relative;
-    height: 50vh;
+    height: 60vh;
 }
 
 .hover-photo img {
@@ -962,14 +962,48 @@ option {
 
 /* Responsive petits écrans */
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1024px){
 
     .container {width:100vw;}
-    
+
     /* Accueil */
 
     .banner-style {height: 100vh;}
 
     .title {top: 60vh;}
+
+    .filters-gallery {width: 95vw;}
+
+    .main-filters-container {
+        width: 100%;
+        float: none;
+    }
+
+    .gallery-container {
+        width: 100%;
+        float: none;
+    }
+
+    .main-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3vw;
+    }
+
+    #ajax-filter {padding: 0;}
+}
+
+@media screen and (max-width:1200px) {
+
+    .container {width:100vw;}
+
+    /* Accueil */
+
+    .banner-style {height: 100vh;}
+
+    .title {top: 60vh;}
+
+    .hover-photo {height:70vh;}
 
 }
