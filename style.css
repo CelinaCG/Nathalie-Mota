@@ -992,6 +992,10 @@ option {
     }
 
     #ajax-filter {padding: 0;}
+
+    /* Single */
+
+    .section-single {width: 95vw;}
 }
 
 @media screen and (max-width:1200px) {
