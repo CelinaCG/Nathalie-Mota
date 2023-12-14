@@ -468,8 +468,6 @@ header {
 
 /* Flèches */
 
-.fleches p {color:#FFFFFF;}
-
 .previous-lightbox, .next-lightbox{
     position: absolute;
     top: 50%;
@@ -782,7 +780,7 @@ option {
 
     .ajax-filters {
         display: flex;
-        gap: 30px;
+        gap: 1px;
     }
 
     #ajax-filter {
@@ -805,6 +803,24 @@ option {
     }
 
     .btn-photos {margin: 0 auto;}
+
+    /* Lightbox */
+    
+    .prev, .next {
+        width: 5vw;
+    } 
+
+    .prev_span {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
+
+    .next_span {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+    }
 
     /* Single */
 
@@ -936,27 +952,27 @@ option {
 
     .main-filters-container {
         width: 100%;
-        float: none;
+        margin: 0 0 2vh;
     }
 
     .gallery-container {
         width: 100%;
-        float: none;
     }
 
     .main-filters {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        overflow: scroll;
+        gap: 4vw;
     }
-
-    #ajax-filter {padding: 0;}
 
     /* Single */
 
     .section-single {width: 95vw;}
 
     .lightbox-content {top: 55%;}
+
+    .btn-contact {width: 30vw;}
+
+    .contact-carrousel {border-bottom: #000000 solid 1px;}
 
 }
 
@@ -976,19 +992,10 @@ option {
 
     .main-filters-container {
         width: 100%;
-        float: none;
     }
 
     .gallery-container {
         width: 100%;
-        float: none;
-    }
-
-    .main-filters {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 3vw;
     }
 
     #ajax-filter {padding: 0;}
