@@ -807,19 +807,17 @@ option {
     /* Lightbox */
     
     .prev, .next {
-        width: 5vw;
+        width: 4vw;
     } 
 
-    .prev_span {
+    .prev_span, .next_span {
         display: flex;
         align-items: center;
         gap: 1vw;
     }
 
-    .next_span {
-        display: flex;
-        align-items: center;
-        gap: 1vw;
+    .navigation span {
+        font-size: 8px !important;
     }
 
     /* Single */
