@@ -16,6 +16,16 @@ window.onclick = function(event) {
     }
 }
 
+// Référence
+
+const refPhoto = document.querySelector('.ref').textContent;
+const btnCon = document.querySelector('.btn-contact');
+const inputRef = document.querySelector('#reference');
+btnCon.addEventListener('click', function(){
+    inputRef.value = refPhoto;
+});
+
+
 // Menu burger
 
 var sidenav = document.querySelector('#side-nav');
@@ -63,26 +73,3 @@ arrowright.addEventListener('mouseenter', function(){
     document.querySelector('.display-image').style.display="none";
 });
 
-// Ajout référence photo dans le formulaire
-
-var refPhoto = document.querySelector('.ref').innerText;
-var btnCon = document.querySelector('.btn-contact');
-var inputRef = document.querySelector('#reference');
-btnCon.addEventListener('click', function(){
-    inputRef.setAttribute('value', refPhoto);
-});
-
-// test 
-
-// Prendre l'image actuelle
-// var currentImage = document.querySelector('.affichage-photo img');
-
-// prendre la réf de cette même image
-// var refPhoto = currentImage.parentNode.previousElementSibling.innerText;
-
-// Ajout évènement au bouton pour faire apparaitre la réf au clic
-// var btnCon = document.querySelector('.btn-contact');
-// btnCon.addEventListener('click', function() {
-//   var inputRef = document.querySelector('#reference');
-//   inputRef.setAttribute('value', refPhoto);
-// });
